@@ -1,0 +1,33 @@
+<view class="tabWrap">
+    <view class='tabItem tabActive'>进行中</view>
+    <view class='tabItem'>已完成</view>
+</view>
+<view class='content'>
+  <view class='list'>
+    <view class='list_head borT'>
+        <image  class='head_portrait' src='/status/timg1@2x.png'></image>
+        <text class='head_name'>朱萧木</text>
+        <text class='head_time'>27分钟前</text>
+        <text class='head_ordel_money'>订单金额:￥100</text>
+    </view>
+    <view class='classInfo borT'>
+      <view class='class_group'>
+        <view class='class_name'>
+          <text class='title'>英语</text>
+          <text class='min_title'>初中一年级</text>
+        </view>
+        <view class='line'></view>
+        <view class='class_time'>
+          <text class='title'>12:00~13:00</text>
+          <text class='min_title'>7-12（周四）</text>
+        </view>
+      </view>
+      <text class='ordert_type'>老师已接单，请付款</text>
+    </view>
+    <view class='scope_group'>
+      <view class='scope_normel_button'>找人砍价</view>
+      <view class='scope_normel_button'>取消订单</view>
+      <view class='scope_normel_button button_active'>立即付款</view>
+    </view>
+  </view>
+</view>

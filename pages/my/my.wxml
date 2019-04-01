@@ -1,0 +1,24 @@
+<view class='head'></view>
+<view class='list_group'>
+  <view class='list_item borT'>
+    <text class='iconfont icon-wodedangxuan1'></text>
+    <text class='list_item_title'>我的老师</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item borT'>
+    <text class='iconfont icon-yijianfankui'></text>
+    <text class='list_item_title'>意见反馈</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item borT'>
+    <text class='iconfont icon-icon1'></text>
+    <text class='list_item_title'>账户详情</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item'>
+    <text class='iconfont icon-xin1 hart'></text>
+    <text class='list_item_title'>关于我们</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <image class='call_group' src='/status/call@2x.png'></image>
+</view>
