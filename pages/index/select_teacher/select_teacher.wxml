@@ -5,9 +5,25 @@
 </view>
 
 <view class='whitePage' wx:if="{{list.length>0}}">
+  <view class='list_head'>
+    已为您匹配到5位老师
+  </view>
+  <view class='list_mintitle'>请选择</view>
   <view class='list'>
-    <view class='list_head'>
-      
+    <view class='item'>
+      <view class='item_wrap'></view>
+      <view class='name_group'>
+        <text class='name'>小样儿</text>
+        <text class='name_features'>生动形象</text>
+      </view>
+      <view class='start_group'>
+        <text class='iconfont icon-xingxing'></text>
+        <text class='iconfont icon-xingxing'></text>
+        <text class='iconfont icon-xingxing'></text>
+        <text class='iconfont icon-xingxing'></text>
+
+        <text class='iconfont icon-xingxing'></text>
+      </view>
     </view>
   </view>
 </view>
