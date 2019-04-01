@@ -58,3 +58,10 @@
   </view>
 
 </view>
+
+<view class='mask'>
+    <view class='mask_content'>
+      <text class='iconfont icon-cha mask_iconfont'></text>
+      <image class='mask_img' src='/status/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<view class='content' wx:if="{{list.length==0}}">
+  <image class='logo' src='/status/teach.png'></image>
+  <text class='iconfont icon-loading'></text>
+  <text class='mintitle'>正在为您努力匹配中...</text>
+</view>
+
+<view class='whitePage' wx:if="{{list.length>0}}">
+  <view class='list'>
+    <view class='list_head'>
+      
+    </view>
+  </view>
+</view>

@@ -1,34 +1,38 @@
 {
-  "pages":[
+  "pages": [
+    "pages/index/select_teacher/select_teacher",
+    "pages/index/index",
     "pages/my/my",
-    "pages/ordel/ordel",
-    "pages/index/index"
-    
+    "pages/ordel/ordel"
     
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#72E7E7",
     "navigationBarTitleText": "约课",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "selectedColor": "#60EAF3",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "status/fill@2x.png",
-      "selectedIconPath": "status/indexfill@2xselect.png"
-    },{
-      "pagePath": "pages/ordel/ordel",
-      "text": "订单",
-      "iconPath": "status/order@2x.png",
-      "selectedIconPath": "status/order_fill@2x.png"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "status/2602@2x.png",
-      "selectedIconPath": "status/3748@2x.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "status/fill@2x.png",
+        "selectedIconPath": "status/indexfill@2xselect.png"
+      },
+      {
+        "pagePath": "pages/ordel/ordel",
+        "text": "订单",
+        "iconPath": "status/order@2x.png",
+        "selectedIconPath": "status/order_fill@2x.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "status/2602@2x.png",
+        "selectedIconPath": "status/3748@2x.png"
+      }
+    ]
   }
 }
