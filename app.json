@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/ordel/bargain/bargain",
+    "pages/ordel/sure_ordel/ordel_sure",
+    "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/select_teacher/select_teacher",
     "pages/index/index",
     "pages/my/my",
