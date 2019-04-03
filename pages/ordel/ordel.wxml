@@ -5,7 +5,7 @@
 <view class='content'>
   <view class='list'>
     <view class='list_head borT'>
-        <image  class='head_portrait' src='/status/timg1@2x.png'></image>
+        <image  class='head_portrait' src='http://class.zzvlm.com/timg1@2x.png'></image>
         <text class='head_name'>朱萧木</text>
         <text class='head_time'>27分钟前</text>
         <text class='head_ordel_money'>订单金额:￥100</text>

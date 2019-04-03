@@ -7,7 +7,7 @@
       </view>
       <text class='mintitle'>每天一斤酒赛过活神仙</text>
     </view>
-    <image class='portrait' src='/status/timg@2x.png'></image>
+    <image class='portrait' src='http://class.zzvlm.com/timg@2x.png'></image>
   </view>
   <view class='head_other'>
     <view class='otherItem'>
@@ -47,5 +47,5 @@
     <text class='list_item_title'>关于我们</text>
     <text class='iconfont icon-arr-right-red'></text>
   </view>
-  <image class='call_group' src='/status/call@2x.png'></image>
+  <image class='call_group' src='http://class.zzvlm.com/call@2x.png'></image>
 </view>

@@ -1,5 +1,5 @@
 <view class='content' wx:if="{{list.length==0}}">
-  <image class='logo' src='/status/teach.png'></image>
+  <image class='logo' src='http://class.zzvlm.com/teach.png'></image>
   <text class='iconfont icon-loading'></text>
   <text class='mintitle'>正在为您努力匹配中...</text>
 </view>
@@ -12,7 +12,7 @@
   <view class='list'>
     <view class='item tfl  w300'>
       <view class='item_wrap w224'>
-        <image src='/status/timg@2x.png'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>
       <view class='name_group'>
         <text class='name'>小样儿</text>
@@ -28,7 +28,7 @@
     </view>
     <view class='item tfr w300'>
       <view class='item_wrap w176'>
-        <image src='/status/timg@2x.png'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>
       <view class='name_group'>
         <text class='name'>小样儿</text>
@@ -44,7 +44,7 @@
     </view>
     <view class='item centent'>
       <view class='item_wrap'>
-        <image src='/status/timg@2x.png'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>
       <view class='name_group'>
         <text class='name'>小样儿</text>
@@ -60,7 +60,7 @@
     </view>
     <view class='item bfl w300'>
       <view class='item_wrap w128'>
-        <image src='/status/timg@2x.png'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>
       <view class='name_group'>
         <text class='name'>小样儿</text>
@@ -76,7 +76,7 @@
     </view>
     <view class='item bfr w300'>
       <view class='item_wrap w256'>
-        <image src='/status/timg@2x.png'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>
       <view class='name_group'>
         <text class='name'>小样儿</text>

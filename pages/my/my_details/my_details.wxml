@@ -1,7 +1,7 @@
 <view class="content">
 <view class='list list_val white'>
   <text class='title'>头像</text>
-  <image src='/status/timg@2x.png' class='val_logo'></image>
+  <image src='http://class.zzvlm.com/timg@2x.png' class='val_logo'></image>
 </view>
   <view class='list'>
     <text class='title'>昵称</text>

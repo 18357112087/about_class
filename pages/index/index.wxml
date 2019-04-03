@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class='headGroup'>
   <view class='personlInfo'>
-    <image src='/status/timg@2x.png' class='portrait'>
+    <image src='http://class.zzvlm.com/timg@2x.png' class='portrait'>
     </image>
     <text class='name'>鱼小二</text>
-    <image class='type' src='/status/3721@2x.png'></image>
+    <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image>
   </view>
 </view>
 <view class='z-5'></view>
@@ -62,6 +62,6 @@
 <view class='mask'>
     <view class='mask_content'>
       <text class='iconfont icon-cha mask_iconfont'></text>
-      <image class='mask_img' src='/status/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
+      <image class='mask_img' src='http://class.zzvlm.com/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
     </view>
 </view>

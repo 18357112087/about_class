@@ -9,7 +9,7 @@
 </view>
 <view class='wrap'>
   <view class='head_top borT'>
-    <image class='top_val' src='/status/timg1@2x.png'></image>
+    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
     <view class='top_res'>
       <view class='top_res_title'>
         <text class='top_res_name'>朱萧木</text>

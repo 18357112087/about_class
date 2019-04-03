@@ -3,15 +3,15 @@
     <view class='info_res'>
       <view class='info_top'>
         <text class='res_name'>小样儿</text>
-        <image class='res_rz' src='/status/1969@2x.png'></image>
+        <image class='res_rz' src='http://class.zzvlm.com/1969@2x.png'></image>
       </view>
       <text class='info_mintitle'>天津工业大学 · 环境监测</text>
     </view>
-    <image class='info_val' src='/status/timg1@2x.png'></image>
+    <image class='info_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
   </view>
   <view class='class'>
     <view class='class_title'>
-      <image class='class_logo' src='/status/123551@2x.png'></image>
+      <image class='class_logo' src='http://class.zzvlm.com/123551@2x.png'></image>
       <text class='class_title_name'>优势学科</text>
     </view>
     <view class='class_kind'>
@@ -34,14 +34,14 @@
   </view>
   <view class='class'>
     <view class='class_title'>
-      <image class='class_logo' src='/status/1223552@2x.png'></image>
+      <image class='class_logo' src='http://class.zzvlm.com/1223552@2x.png'></image>
       <text class='class_title_name'>用户评价(27)</text>
       <text class='class_mintitle'>97%好评</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
     <view class='evaluate_list'>
       <view class='list_head'>
-        <image src='/status/timg@2x.png' class='list_head_val'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
         <text class='list_head_name'>逆游的鱼儿</text>
         <block>
           <text class='iconfont icon-xingxing ml'></text>
@@ -58,7 +58,7 @@
     </view>
     <view class='evaluate_list'>
       <view class='list_head'>
-        <image src='/status/timg@2x.png' class='list_head_val'></image>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
         <text class='list_head_name'>逆游的鱼儿</text>
         <block>
           <text class='iconfont icon-xingxing ml'></text>

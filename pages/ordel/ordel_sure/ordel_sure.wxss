@@ -51,12 +51,17 @@ page {
 }
 
 .main_price {
+  position: relative;
   font-size: 36rpx;
   color: rgba(44, 44, 44, 1);
+  text-indent: 20rpx;
 }
 
 .main_price::before {
   content: '￥';
+  position: absolute;
+  left: -20rpx;
+  bottom: 5rpx;
   font-size: 20rpx !important;
 }
 
