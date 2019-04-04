@@ -44,5 +44,6 @@ page {
   color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 68rpx;
 }

@@ -11,4 +11,4 @@
   </view>
 </view>
 
-<view class='buttom'>立即绑定</view>
+<view class='buttom' bindtap='return_go'>立即绑定</view>

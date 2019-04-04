@@ -14,7 +14,22 @@ Page({
   onLoad: function (options) {
 
   },
-
+  bind_phone(){
+    wx.navigateTo({
+      url: '/pages/bind_phone/bind_phone',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  to_adder(){
+    wx.navigateTo({
+      url: '/pages/my/my_adder/my_adder',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

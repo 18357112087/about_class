@@ -14,14 +14,28 @@ Page({
   onLoad: function (options) {
 
   },
-
+  to_teacher_res() {
+    wx.navigateTo({
+      url: '/pages/index/teacher_index/teacher_index',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+  sure_ordel(){
+    wx.navigateTo({
+      url: '/pages/ordel/sure_ordel/ordel_sure',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

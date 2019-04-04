@@ -1,6 +1,6 @@
 <view class='head'>共有3位老师</view>
 <view class='list_wrap'>
-  <view class='list borT'>
+  <view class='list borT' bindtap='to_res'>
     <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
     <view class='top_res'>
       <view class='top_res_title'>
@@ -11,7 +11,7 @@
       <view class='top_res_detail'>天津工业大学 · 环境监测</view>
     </view>
   </view>
-  <view class='list borT'>
+  <view class='list borT' bindtap='to_res'>
     <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
     <view class='top_res'>
       <view class='top_res_title'>
@@ -22,7 +22,7 @@
       <view class='top_res_detail'>天津工业大学 · 环境监测</view>
     </view>
   </view>
-  <view class='list borT'>
+  <view class='list borT' bindtap='to_res'>
     <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
     <view class='top_res'>
       <view class='top_res_title'>

@@ -12,56 +12,66 @@
 <view class='z-7'>
   <text class='title'>请填写家教预约信息</text>
   <view class='list_wrap'>
-    <view class='list borT'>
-      <text class='iconfont icon-nianji'></text>
-      <text class='list_title'>年级</text>
-      <view class='list_Centent'>如初中1年级</view>
-      <text class='iconfont icon-arr-right-red'></text>
-    </view>
-    <view class='list borT'>
-      <text class='iconfont icon-kemusi'></text>
-      <text class='list_title'>科目</text>
-      <view class='list_Centent'>如英语、化学</view>
-      <text class='iconfont icon-arr-right-red'></text>
-    </view>
-    <view class='list borT'>
-      <text class='iconfont icon-riqi'></text>
-      <text class='list_title'>日期</text>
-      <view class='list_Centent'>如12月25日</view>
-      <text class='iconfont icon-arr-right-red'></text>
-    </view>
-    <view class='list borT'>
-      <text class='iconfont icon-shijian'></text>
-      <text class='list_title'>时间</text>
-      <view class='list_Centent'>如12:00~13:00</view>
-      <text class='iconfont icon-arr-right-red'></text>
-    </view>
-    <view class='list'>
-      <text class='iconfont icon-sousuoyemiantubiao'></text>
-      <text class='list_title'>级别</text>
-      <view class='list_Centent'>选择老师级别</view>
-      <text class='iconfont icon-arr-right-red'></text>
-    </view>
+    <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_lsit}}">
+      <view class='list borT'>
+        <text class='iconfont icon-nianji'></text>
+        <text class='list_title'>年级</text>
+        <view class='list_Centent'>{{grade_lsit[grade_index]}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" data-type='class' value="{{class_index}}" range="{{class_list}}">
+      <view class='list borT'>
+        <text class='iconfont icon-kemusi'></text>
+        <text class='list_title'>科目</text>
+        <view class='list_Centent'>{{class_list[class_index]}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      <view class='list borT'>
+        <text class='iconfont icon-riqi'></text>
+        <text class='list_title'>日期</text>
+        <view class='list_Centent'>{{date}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
+    <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+      <view class='list borT'>
+        <text class='iconfont icon-shijian'></text>
+        <text class='list_title'>时间</text>
+        <view class='list_Centent'>{{time}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
+
+    <picker bindchange="bindPickerChange" data-type='level' value="{{level_index}}" range="{{level_list}}">
+      <view class='list'>
+        <text class='iconfont icon-sousuoyemiantubiao'></text>
+        <text class='list_title'>级别</text>
+        <view class='list_Centent'>{{level_list[level_index]}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
     <view class='list'>
       <text class='iconfont icon-biaoqian'></text>
       <text class='list_title'>标签</text>
       <view class='list_Centent w450'>
-        <text class='minTab minTabActive'>985院校</text>
-        <text class='minTab'>211院校</text>
+        <text class="minTab {{min_index==index?'minTabActive':''}}" wx:for="{{minTab_list}}" bindtap='select_tab' data-index='{{index}}'>{{item}}</text>
       </view>
     </view>
   </view>
-  <view class='sumbit'>一键下单</view>
+  <view class='sumbit' bindtap='sure'>一键下单</view>
   <view class='broadcast'>
     <text class='iconfont icon-guangbo'></text>
-    <view class='broadWrap'></view>
+    <view class='broadWrap'>交易大厅迎来重大升级！欢迎体验</view>
   </view>
 
 </view>
 
-<view class='mask'>
-    <view class='mask_content'>
-      <text class='iconfont icon-cha mask_iconfont'></text>
-      <image class='mask_img' src='http://class.zzvlm.com/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
-    </view>
+<view class='mask' wx:if="{{mask}}">
+  <view class='mask_content'>
+    <text class='iconfont icon-cha mask_iconfont' bindtap='hideMask'></text>
+    <image class='mask_img' src='http://class.zzvlm.com/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
+  </view>
 </view>

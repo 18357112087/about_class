@@ -10,7 +10,7 @@
   </view>
   <view class='list_mintitle'>请选择</view>
   <view class='list'>
-    <view class='item tfl  w300'>
+    <view class='item tfl  w300' bindtap='to_teacherRes'>
       <view class='item_wrap w224'>
         <image src='http://class.zzvlm.com/timg@2x.png'></image>
       </view>

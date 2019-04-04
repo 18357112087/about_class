@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    mask:false
   },
 
   /**
@@ -14,7 +14,24 @@ Page({
   onLoad: function (options) {
 
   },
-
+  show_mask(){
+    this.setData({
+      mask:!this.data.mask
+    })
+  },
+  look_res() {
+    wx.navigateTo({
+      url: '/pages/ordel/ordel_res/ordel_res',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  save_pic(){
+    this.setData({
+      mask:false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

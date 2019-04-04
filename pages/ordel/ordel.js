@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabindex:0,
+    tab_list:['进行中','已完成']
   },
 
   /**
@@ -14,7 +15,29 @@ Page({
   onLoad: function (options) {
 
   },
-
+  select_tab(e){
+    this.setData({
+      tabindex: e.currentTarget.dataset.index
+    })
+    
+  },
+  to_res(){
+    wx.navigateTo({
+      url: '/pages/ordel/ordel_res/ordel_res',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  //去砍价
+  to_bargain(){
+    wx.navigateTo({
+      url: '/pages/ordel/bargain/bargain',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

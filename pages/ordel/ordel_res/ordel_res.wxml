@@ -8,7 +8,7 @@
   <!-- <image></image> -->
 </view>
 <view class='wrap'>
-  <view class='head_top borT'>
+  <view class='head_top borT' bindtap='to_teacher_res'>
     <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
     <view class='top_res'>
       <view class='top_res_title'>

@@ -21,7 +21,14 @@ Page({
   onReady: function () {
 
   },
-
+  to_teacher_res(){
+    wx.navigateTo({
+      url: '/pages/index/teacher_index/teacher_index',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

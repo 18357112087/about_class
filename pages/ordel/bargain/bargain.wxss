@@ -236,7 +236,8 @@
 .share_group {
   width: 100%;
   height: 480rpx;
-  background-color: red;
+  background-image: url('http://class.zzvlm.com/37861@2x.png');
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

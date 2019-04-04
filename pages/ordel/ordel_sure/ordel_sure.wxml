@@ -1,7 +1,7 @@
 <view class='content'>
   <view class='wrap'>
     <image class='head_group' src='http://class.zzvlm.com/teach.png'></image>
-    <view class='res_group'>
+    <view class='res_group' bindtap='to_teacher_res'>
       <text class='res_title'>详细信息</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
@@ -56,7 +56,7 @@
       </view>
       <view class='money_list borT'>
         <view class='left'>
-          <view class='checkBox'></view>
+          <view class='checkBox checkBoxActive'></view>
           <text class='check_title'>附加饭费</text>
         </view>
         <view class='right'>
@@ -82,12 +82,12 @@
     </view>
   </view>
 </view>
-<cover-view class='sure_group'>
-  <cover-view class='brid'>2</cover-view>
-  <cover-image class='car_img' src="http://class.zzvlm.com/car@2x.png"></cover-image>
-  <cover-view class='price_group'>
-    <cover-view class='main_price'>120.0</cover-view>
-    <cover-view class='other_price'>额外费用¥0.00</cover-view>
-  </cover-view>
-  <cover-view class='sure_button'>确定下单</cover-view>
-</cover-view>
+<view class='sure_group'>
+  <view class='brid'>2</view>
+  <image class='car_img' src="http://class.zzvlm.com/car@2x.png"></image>
+  <view class='price_group'>
+    <view class='main_price'>120.0</view>
+    <view class='other_price'>额外费用¥0.00</view>
+  </view>
+  <view class='sure_button' bindtap='sure_ordel'>确定下单</view>
+</view>

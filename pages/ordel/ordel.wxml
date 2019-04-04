@@ -1,9 +1,8 @@
 <view class="tabWrap">
-    <view class='tabItem tabActive'>进行中</view>
-    <view class='tabItem'>已完成</view>
+    <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>{{item}}</view>
 </view>
 <view class='content'>
-  <view class='list'>
+  <view class='list' bindtap='to_res'>
     <view class='list_head borT'>
         <image  class='head_portrait' src='http://class.zzvlm.com/timg1@2x.png'></image>
         <text class='head_name'>朱萧木</text>
@@ -25,7 +24,7 @@
       <text class='ordert_type'>老师已接单，请付款</text>
     </view>
     <view class='scope_group'>
-      <view class='scope_normel_button'>找人砍价</view>
+      <view class='scope_normel_button' catchtap='to_bargain'>找人砍价</view>
       <view class='scope_normel_button'>取消订单</view>
       <view class='scope_normel_button button_active'>立即付款</view>
     </view>

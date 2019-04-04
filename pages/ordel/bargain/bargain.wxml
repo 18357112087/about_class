@@ -19,7 +19,7 @@
   </view>
 </view>
 <view class='content'>
-  <view class='button_return'>帮TA砍价</view>
+  <view class='button_return' bindtap='show_mask'>帮TA砍价</view>
   <view class='button_group'>我也要砍价</view>
   <view class='content_wrap'>
     <view class='wrap_title'>好友砍价榜</view>
@@ -77,10 +77,10 @@
   </view>
 </view>
 <view class='bottom'>
-  <view class='button_group margin0'>查看订单</view>
+  <view class='button_group margin0' bindtap='look_res'>查看订单</view>
 </view>
 
-<view class='mask'>
+<view class='mask' wx:if="{{mask}}" bindtap='show_mask'>
   <view class='mask_content'>
     <view class='share_group'>
       <image class='share_code' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>
@@ -100,5 +100,5 @@
       </view>
     </view>
   </view>
-  <view class='button_group' style='margin-top:100rpx'>保存图片</view>
+  <view class='button_group' style='margin-top:100rpx' catchtap='save_pic'>保存图片</view>
 </view>

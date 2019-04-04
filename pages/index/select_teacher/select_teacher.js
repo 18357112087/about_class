@@ -18,6 +18,14 @@ Page({
       })},3000)
       
   },
+  to_teacherRes(){
+    wx.navigateTo({
+      url: '/pages/ordel/ordel_sure/ordel_sure',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
