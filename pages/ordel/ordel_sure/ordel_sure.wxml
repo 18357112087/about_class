@@ -44,34 +44,14 @@
         <text class='title'>选择额外费用类别</text>
         <text class='iconfont icon-arrow-up'></text>
       </view>
-      <view class='money_list borT'>
+      <view class="money_list {{index!=other_list.length-1?'borT':''}}" wx:for="{{other_list}}" wx:key='{{index}}'>
         <view class='left'>
-          <view class='checkBox checkBoxActive'></view>
-          <text class='check_title'>附加车费</text>
+          <view class="checkBox {{item.check?'checkBoxActive':''}}" bindtap='select' data-index="{{index}}"></view>
+          <text class='check_title'>{{item.label}}</text>
         </view>
         <view class='right'>
           <text class='ipt_before'>￥</text>
-          <input class='ipt_money' placeholder='填写金额'></input>
-        </view>
-      </view>
-      <view class='money_list borT'>
-        <view class='left'>
-          <view class='checkBox checkBoxActive'></view>
-          <text class='check_title'>附加饭费</text>
-        </view>
-        <view class='right'>
-          <text class='ipt_before'>￥</text>
-          <input class='ipt_money' placeholder='填写金额'></input>
-        </view>
-      </view>
-      <view class='money_list'>
-        <view class='left'>
-          <view class='checkBox'></view>
-          <text class='check_title'>附加感谢费</text>
-        </view>
-        <view class='right'>
-          <text class='ipt_before'>￥</text>
-          <input class='ipt_money' placeholder='填写金额'></input>
+          <input class='ipt_money' placeholder='填写金额' value='{{item.money}}'></input>
         </view>
       </view>
     </view>

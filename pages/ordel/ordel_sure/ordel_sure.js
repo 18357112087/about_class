@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    other_list:[{
+      label:'附加车费',
+      check:true,
+      money:''
+    }, {
+        label: '附加饭费',
+        check: true,
+        money:''
+      }, {
+        label: '附加感谢费',
+        check: false,
+        money:''
+      }]
   },
 
   /**
@@ -20,6 +32,14 @@ Page({
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
+    })
+  },
+  //选择额外费用
+  select(e){
+    let arr = this.data.other_list
+    arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
+    this.setData({
+      other_list: arr
     })
   },
   /**

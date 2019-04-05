@@ -1,4 +1,5 @@
 // pages/my/my.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
@@ -7,7 +8,9 @@ Page({
   data: {
 
   },
-
+  call(){
+    config.mytoast('点此打电话')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

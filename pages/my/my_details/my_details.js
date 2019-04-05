@@ -1,4 +1,5 @@
 // pages/my/my_details/my_details.js
+const config=require('../../../utils/util.js')
 Page({
 
   /**
@@ -13,6 +14,21 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  user_val(){
+    config.mytoast('点此换头像')
+  },
+  user_name() {
+    config.mytoast('点此编辑昵称')
+  },
+  user_sex() {
+    config.mytoast('点此更改性别')
+  },
+  user_age() {
+    config.mytoast('点此换年龄')
+  },
+  out(){
+    config.mytoast('点此退出')
   },
   bind_phone(){
     wx.navigateTo({

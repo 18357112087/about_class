@@ -1,11 +1,13 @@
 // pages/login/login.js
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    user_name:'',
+    user_password:''
   },
 
   /**
@@ -14,14 +16,7 @@ Page({
   onLoad: function (options) {
 
   },
-  to_index(){
-    wx.switchTab({
-      url: '/pages/index/index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -35,7 +30,36 @@ Page({
   onShow: function () {
 
   },
-
+  //获取用户名和密码
+  get_user(e){
+    console.log(e)
+    switch (e.currentTarget.dataset.type) {
+      case "user_name":
+        this.setData({
+          user_name: e.detail.value
+        })
+        break;
+      case 'user_password':
+        this.setData({
+          user_password: e.detail.value
+        })
+        break;
+      default:
+        
+    }
+  },
+  to_index() {
+    if (this.data.user_name != '' && this.data.user_password != ''){
+      wx.switchTab({
+        url: '/pages/index/index',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }else{
+      config.mytoast('请输入用户名和秘密')
+    } 
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

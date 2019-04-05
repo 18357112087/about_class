@@ -54,6 +54,6 @@
 </view>
 
 <view class='bottom_group'>
-  <view class='cendel'>取消订单</view>
-  <view class='payed'>付款</view>
+  <view class='cendel' bindtap='cendel_ordel'>取消订单</view>
+  <view class='payed' bindtap='pay_ordel'>付款</view>
 </view>
