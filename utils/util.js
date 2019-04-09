@@ -1,11 +1,9 @@
 //主域名
-const myapp = getApp()
 const https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
-
 /**
  * 时间转换
  */
-function timeFormatNotime(time) {
+function timeForm(time) {
   var date = new Date(time * 1000),
     curDate = new Date(),
     year = date.getFullYear(),
@@ -15,20 +13,27 @@ function timeFormatNotime(time) {
     minute = date.getMinutes(),
     curYear = curDate.getFullYear(),
     curHour = curDate.getHours(),
-    timeStr;
+    timeStr, btTimeStr;
+
   if (minute < 10) {
+    remW
     minute = '0' + minute
   }
+  if (month < 10) {
+    month = '0' + month
+  }
+  if (day < 10) {
+    day = '0' + day
+  }
+  btTimeStr = year + '-' + month + '-' + day
   if (year < curYear) {
-    // timeStr = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
-    timeStr = year + '/' + month + '/' + day;
+    timeStr = year + '-' + month + '-' + day;
+
   } else {
     var pastTime = curDate - date,
       pastH = pastTime / 3600000;
-
     if (pastH > curHour) {
-      // timeStr = month + '月' + day + '日 ' + '' + hour + '时' + minute + '分';
-      timeStr = year + '/' + month + '/' + day;
+      timeStr = year + '-' + month + '-' + day;
     } else if (pastH >= 1) {
       timeStr = '今天 ' + hour + ':' + minute + '分';
     } else {
@@ -40,121 +45,10 @@ function timeFormatNotime(time) {
       }
     }
   }
-  return timeStr;
-}
-function timeForm(time) {
-  var date = new Date(time * 1000),
-    curDate = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate(),
-    hour = date.getHours(),
-    minute = date.getMinutes(),
-    curYear = curDate.getFullYear(),
-    curHour = curDate.getHours(),
-    timeStr;
-  if (minute < 10) {
-    minute = '0' + minute
-  }
-  if (year < curYear) {
-    // timeStr = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
-    timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-  } else {
-    var pastTime = curDate - date,
-      pastH = pastTime / 3600000;
-
-    if (pastH > curHour) {
-      // timeStr = month + '月' + day + '日 ' + '' + hour + '时' + minute + '分';
-      timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-    } else if (pastH >= 1) {
-      timeStr = hour + ':' + minute + '分';
-    } else {
-      var pastM = curDate.getMinutes() - minute;
-      if (pastM > 1) {
-        timeStr = pastM + '分钟前';
-      } else {
-        timeStr = '刚刚';
-      }
-    }
-  }
-  return timeStr;
-}
-function timeall(time) {
-  var date = new Date(time * 1000),
-    curDate = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate(),
-    hour = date.getHours(),
-    minute = date.getMinutes(),
-    curYear = curDate.getFullYear(),
-    curHour = curDate.getHours(),
-    timeStr;
-  // if (minute < 10) {
-  //   minute = '0' + minute
-  // }
-  timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-  // if (year < curYear) {
-  //   // timeStr = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
-  //   timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-  // } else {
-  //   var pastTime = curDate - date,
-  //     pastH = pastTime / 3600000;
-
-  //   if (pastH > curHour) {
-  //     // timeStr = month + '月' + day + '日 ' + '' + hour + '时' + minute + '分';
-  //     timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-  //   } else if (pastH >= 1) {
-  //     timeStr = hour + ':' + minute + '分';
-  //   } else {
-  //     var pastM = curDate.getMinutes() - minute;
-  //     if (pastM > 1) {
-  //       timeStr = pastM + '分钟前';
-  //     } else {
-  //       timeStr = '刚刚';
-  //     }
-  //   }
-  // }
-  return timeStr;
-}
-function timelist(time) {
-  var date = new Date(time * 1000),
-    curDate = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate(),
-    hour = date.getHours(),
-    minute = date.getMinutes(),
-    curYear = curDate.getFullYear(),
-    curHour = curDate.getHours(),
-    timeStr;
-
-  if (minute < 10) {
-    minute = '0' + minute
-  }
-  timeStr = hour + ':' + minute;
-  // if (year < curYear) {
-  //   // timeStr = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
-  //   timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
-  // } else {
-  //   var pastTime = curDate - date,
-  //     pastH = pastTime / 3600000;
-
-  //   if (pastH > curHour) {
-  //     // timeStr = month + '月' + day + '日 ' + '' + hour + '时' + minute + '分';
-  //     timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;;
-  //   } else if (pastH >= 1) {
-  //     timeStr = hour + ':' + minute + '分';
-  //   } else {
-  //     var pastM = curDate.getMinutes() - minute;
-  //     if (pastM > 1) {
-  //       timeStr = pastM + '分钟前';
-  //     } else {
-  //       timeStr = '刚刚';
-  //     }
-  //   }
-  // }
-  return timeStr;
+  return {
+    chatTime: timeStr,
+    btTime: btTimeStr
+  };
 }
 /**
  * 封装自定义优美的toast
@@ -219,6 +113,21 @@ function rem(height, successData) {
     success: (res) => {
       if (height != null && height != undefined && height != '') {
         var myheight = res.windowHeight - res.windowWidth / 750 * height
+      } else {
+        var myheight = res.windowHeight
+      }
+      successData(myheight)
+    },
+    fail: function (res) { },
+    complete: function (res) { },
+  })
+}
+
+function remW(height, successData) {
+  wx.getSystemInfo({
+    success: (res) => {
+      if (height != null && height != undefined && height != '') {
+        var myheight = res.windowWidth / 750 * height
       } else {
         var myheight = res.windowHeight
       }
@@ -325,81 +234,12 @@ function getData(e, name) {
   return e.currentTarget.dataset[name]
 }
 /**
- * 自定义封装支付函数
- */
-function pay(res, successData, errorData) {
-  console.log(res.data.data)
-  wx.requestPayment({
-    "timeStamp": res.data.data.timeStamp,
-    "nonceStr": res.data.data.nonceStr,
-    "package": res.data.data.package,
-    "signType": "MD5",
-    "paySign": res.data.data.paySign,
-    "success": function (res) {
-      wx.showToast({
-        title: '支付完成',
-        icon: "success",
-        duration: 1500,
-        success: function (data) {
-          successData(data)
-        }
-      })
-    },
-    "fail": function (res) {
-      if (errorData) {
-        errorData(res)
-      }
-      wx.showToast({
-        title: '取消支付成功！',
-        icon: "success",
-        duration: 1500,
-      })
-    }
-  })
-}
-/**
- * 自定义获取token函数
- */
-function gitToken(successData) {
-  wx.login({
-    success: (res) => {
-      wx.request({
-        url: https + token,
-        method: 'POST',
-        header: {
-          'content-type': "application/x-www-form-urlencoded",
-          'S-type': 'm',
-          'S-token': wx.getStorageSync('token')
-        },
-        data: {
-          code: res.code
-        },
-        success: (res) => {
-          wx.setStorageSync('token', res.data.data.token)
-          if (successData) {
-            successData(res)
-          }
-        },
-        error(res) {
-
-        },
-        complete(res) {
-
-        }
-      })
-    },
-    fail: function (res) { },
-    complete: function (res) { },
-  })
-}
-/**
  * 自定义request请求基类
  */
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
-  // methonType = "application/x-www-form-urlencoded"
   //访问的主域名
-  var https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
+  var https = "https://lingyistore.dazhu-ltd.cn/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -422,8 +262,6 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
       method: Type,
       header: {
         'content-type': methonType,
-        // 'S-type': 'm',
-        // 'S-token': wx.getStorageSync('token')
       },
       data: params,
       success: (res) => {
@@ -435,13 +273,12 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
           if (res.data.code == -1) {
             wx.clearStorage('user_token')
             wx.redirectTo({
-              url: '/pages/login/index',
+              url: '/pages/doctor/login/login',
               success: function (res) { },
               fail: function (res) { },
               complete: function (res) { },
             })
           }
-
         }
       },
       error(res) {
@@ -460,12 +297,11 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
       wx.uploadFile({
         url: https + url,
         filePath: imgurl,
-        name: 'file',
+        name: 'image',
         formData: params,
         success: (res) => {
           wx.hideLoading()
           var data = JSON.parse(res.data)
-          console.log(data)
           if (data.code == 1) {
             successData(data)
           } else {
@@ -486,14 +322,6 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
     }
 
   }
-
-
-
-
-
-
-  // console.log(app)
-
 };
 
 //导出模块
@@ -501,11 +329,9 @@ module.exports = {
   https: https,
   ajax: ajax,
   rem: rem,
+  remW: remW,
   chooseImage: chooseImage,
   getData: getData,
   mytoast: mytoast,
-  timeFormatNotime: timeFormatNotime,
   timeForm: timeForm,
-  timelist: timelist,
-  timeall: timeall
 }
