@@ -1,32 +1,8 @@
-<!-- index.wxml -->
-<view class="container">
-  <view class='pic_code_wrap hide {{pic_code_wrap?"show":""}}'>
-    <view class='pic_code'>
-      <view class='pic-nav'></view>
-      <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
-      <view class='pic_code_tit'>请输入下面的图形验证码</view>
-      <!-- <image class='pic_code_pic' src='{{imgUrl}}/code.png'></image> -->
-      <canvas canvas-id="canvas" bindtap='change' class='pic_code_pic'></canvas>
-      <input class='pic_code_input' type='text' maxlength='6' bindinput='getPicCode' value='{{picCode}}'></input>
-      <view class='pic_tips'>
-        {{picCode!=""?erroCode==true?'验证码不正确请重新输入':'验证码区分大小写 ':'请输入图片验证码'}}
-      </view>
-      <view class='pic_btn' bindtap='index_page'>提交</view>
-    </view>
+<view class="content">
+  <input class='ipt_group' placeholder='请输入手机号' type='number' placeholder-class='colorBlue' bindinput='get_user' data-type="user_phone"></input>
+  <view class='codeWrap'>
+    <input class='ipt_group_passworld' placeholder='请输入验证码' placeholder-class='colorBlue' bindinput='get_user' data-type="user_password"></input>
+    <view class='code' bindtap='send_code'>{{code_type}}</view>
   </view>
-  <view class='titpic'>
-    <view class='text'>免疫球蛋白</view>
-    <view class='tips'>T h e h o s p i t a l</view>
-  </view>
-  <view class='password_box'>
-    <i class='iconfont icon-dianhua'></i>
-    <input type='text' class='login_num' placeholder-class='login_num' placeholder='请输入手机号' maxlength='11' bindinput='getPhone' value='{{phone}}'></input>
-  </view>
-  <view class='password_box'>
-    <i class='iconfont icon-mima'></i>
-    <input type='text' class='login_num' placeholder-class='login_num' placeholder='请输入验证码' maxlength='6' bindinput='getCode' value='{{code}}'></input>
-    <view class='send_num' bindtap="SendCode">{{codeStatua}}</view>
-  </view>
-  <view class='code_tips hide{{code_tips?"show":""}}'>验证码已发送请注意查收</view>
-  <view class='login_btn' bindtap='login_btn'>登陆</view>
+  <button class='button'  open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang='zh_CN'>登 陆</button>
 </view>

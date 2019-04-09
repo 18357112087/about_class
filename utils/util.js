@@ -1,5 +1,5 @@
 //主域名
-const https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
+const https = "http://yueke.dazhu-ltd.cn/user"
 /**
  * 时间转换
  */
