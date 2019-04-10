@@ -239,7 +239,7 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "https://lingyistore.dazhu-ltd.cn/"
+  var https = "http://yueke.dazhu-ltd.cn/user"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -268,17 +268,18 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
         wx.hideLoading()
         if (res.data.code == 1) {
           successData(res)
-        } else {
-          mytoast(res.data.msg)
-          if (res.data.code == -1) {
-            wx.clearStorage('user_token')
-            wx.redirectTo({
-              url: '/pages/doctor/login/login',
-              success: function (res) { },
-              fail: function (res) { },
-              complete: function (res) { },
-            })
-          }
+        } else if (res.data.code == -1) {
+          //登陆超时
+          mytoast('登陆超时')
+          wx.clearStorage('user_token')
+          wx.redirectTo({
+            url: '/pages/login/login',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        }else{
+          mytoast('服务异常')
         }
       },
       error(res) {

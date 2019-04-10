@@ -1,22 +1,33 @@
 // pages/index/select_teacher/select_teacher.js
+const config=require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [1,2,3,4,5]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    setTimeout(()=>{
-      this.setData({
-        list: [1, 2, 3, 4, 5]
-      })},3000)
-      
+
+ 
+  },
+  //获取匹配的老师
+  getTeachers(){
+    config.ajax('POST', {
+      token: '',   //token
+      order_id: ''  //订单id
+    }, '/order/select_teacher', res => {
+      setTimeout(() => {
+        this.setData({
+          list: res.data.data
+        })
+      }, 3000)
+    })
   },
   to_teacherRes(){
     wx.navigateTo({

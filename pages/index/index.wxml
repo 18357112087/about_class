@@ -12,23 +12,23 @@
 <view class='z-7'>
   <text class='title'>请填写家教预约信息</text>
   <view class='list_wrap'>
-    <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_lsit}}">
+    <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_list}}" range-key='grade_name'>
       <view class='list borT'>
         <text class='iconfont icon-nianji'></text>
         <text class='list_title'>年级</text>
-        <view class='list_Centent'>{{grade_lsit[grade_index]}}</view>
+        <view class='list_Centent'>{{grade_list[grade_index].grade_name}}</view>
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-    <picker bindchange="bindPickerChange" data-type='class' value="{{class_index}}" range="{{class_list}}">
+    <picker bindchange="bindPickerChange" data-type='class' value="{{class_index}}" range="{{class_list}}" range-key='subjects_name'>
       <view class='list borT'>
         <text class='iconfont icon-kemusi'></text>
         <text class='list_title'>科目</text>
-        <view class='list_Centent'>{{class_list[class_index]}}</view>
+        <view class='list_Centent'>{{class_list[class_index].subjects_name}}</view>
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange" start="{{date}}">
       <view class='list borT'>
         <text class='iconfont icon-riqi'></text>
         <text class='list_title'>日期</text>
@@ -36,7 +36,7 @@
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-    <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+    <picker mode="time" value="{{time}}" bindchange="bindTimeChange" >
       <view class='list borT'>
         <text class='iconfont icon-shijian'></text>
         <text class='list_title'>时间</text>
@@ -45,11 +45,11 @@
       </view>
     </picker>
 
-    <picker bindchange="bindPickerChange" data-type='level' value="{{level_index}}" range="{{level_list}}">
+    <picker bindchange="bindPickerChange" data-type='level' value="{{level_index}}" range="{{level_list}}" range-key='teacher_grade_name'>
       <view class='list'>
         <text class='iconfont icon-sousuoyemiantubiao'></text>
         <text class='list_title'>级别</text>
-        <view class='list_Centent'>{{level_list[level_index]}}</view>
+        <view class='list_Centent'>{{level_list[level_index].teacher_grade_name}}</view>
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
