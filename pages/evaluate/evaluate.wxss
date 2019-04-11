@@ -40,8 +40,11 @@ page {
 }
 .icon-xingxing{
   font-size: 20rpx;
-  color: rgba(255, 153, 73, 1);
+  color:rgba(247, 133, 0, 0.4);
   margin-right: 10rpx;
+}
+.active{
+    color: rgba(255, 153, 73, 1);
 }
 .button {
   width: 656rpx;

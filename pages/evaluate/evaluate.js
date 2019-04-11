@@ -1,11 +1,13 @@
 // page/evaluate/evaluate.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    start: [1, 2, 3, 4, 5],
+    score:3
   },
 
   /**
@@ -14,7 +16,13 @@ Page({
   onLoad: function (options) {
 
   },
-
+  //评星
+  tabStart(e){
+    console.log(e.currentTarget.dataset.index)
+    this.setData({
+      score: e.currentTarget.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

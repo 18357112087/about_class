@@ -91,10 +91,10 @@ Page({
             var address = addressRes.result.formatted_addresses.recommend;
             config.ajax('POST', {
               token: '',        //token 
-              subjects_id: that.class_list[class_index].subjects_id,  //科目id 
-              grade_id: that.grade_list[grade_index].grade_id,     //年级id
-              teacher_grade_id: that.level_list[level_index].teacher_grade_id,   //级别id
-              reservetime: that.date + '' + that.time,     //预约时间 格式为“2019-04-06 18:00”
+              subjects_id: that.data.class_list[that.data.class_index].subjects_id,  //科目id 
+              grade_id: that.data.grade_list[that.data.grade_index].grade_id,     //年级id
+              teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id,   //级别id
+              reservetime: that.data.date + '' + that.data.time,     //预约时间 格式为“2019-04-06 18:00”
               address: address,
               latitude: res.latitude,
               longitude: res.longitude,

@@ -4,11 +4,7 @@
   <view class='start_group'>
     <text class='mintitle'>选择评分</text>
     <block>
-      <text class='iconfont icon-xingxing'></text>
-      <text class='iconfont icon-xingxing'></text>
-      <text class='iconfont icon-xingxing'></text>
-      <text class='iconfont icon-xingxing'></text>
-      <text class='iconfont icon-xingxing'></text>
+      <text class="iconfont icon-xingxing {{score<index?'':'active'}}" wx:for="{{start}}" wx:for-index="index" bindtap='tabStart' data-index='{{index}}'></text>
     </block>
   </view>
   <view class='button'>确定下单</view>

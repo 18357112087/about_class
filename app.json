@@ -1,13 +1,15 @@
 {
   "pages": [
+    "pages/evaluate/evaluate",
+    "pages/ordel/ordel_sure/ordel_sure",
+    "pages/index/teacher_index/teacher_index",
+    
+    "pages/ordel/bargain/bargain",
     "pages/index/index",
     "pages/login/login",
     "pages/my/my_adder/my_adder",
-    "pages/ordel/ordel_sure/ordel_sure",
-    "pages/index/teacher_index/teacher_index",
-    "pages/ordel/bargain/bargain",
     "pages/teacher/teacher",
-    "pages/evaluate/evaluate",
+    
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
     "pages/bind_phone/bind_phone",
