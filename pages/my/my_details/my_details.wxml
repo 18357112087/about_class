@@ -25,4 +25,4 @@
   </view>
 </view>
 
-<view class='out_group' bindtap='out'>安全退出</view>
+<view class='out_group' bindtap='out'>保存</view>

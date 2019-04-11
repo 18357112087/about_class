@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:null,
+    teacher:[]
   },
   call(){
     config.mytoast('点此打电话')
@@ -17,6 +18,28 @@ Page({
   onLoad: function (options) {
 
   },
+  //获取个人信息
+  get_userInfo(){
+    config.ajax('POST',{
+      token:''
+    },'/user/user_info',res=>{
+      this.setData({
+        userInfo:res.data.data
+      })
+    })
+  },
+  //我的老师
+  get_myteacher(){
+    config.ajax('POST', {
+      token: ''
+    }, '/user/my_teacher', res => {
+      this.setData({
+        teacher: res.data.data
+      })
+    })
+  },
+  //全部订单
+  
   to_myteacher(){
     wx.navigateTo({
       url: '/pages/my/my_teacher/my_teacher',

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/evaluate/evaluate",
     "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/teacher_index/teacher_index",
@@ -18,7 +19,7 @@
     "pages/ordel/ordel_res/ordel_res",
     "pages/ordel/sure_ordel/ordel_sure",
     "pages/index/select_teacher/select_teacher",
-    "pages/my/my",
+    
     "pages/ordel/ordel"
   ],
   "window": {

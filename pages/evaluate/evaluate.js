@@ -1,11 +1,12 @@
 // page/evaluate/evaluate.js
-
+const config=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    content:'',
     start: [1, 2, 3, 4, 5],
     score:3
   },
@@ -21,6 +22,27 @@ Page({
     console.log(e.currentTarget.dataset.index)
     this.setData({
       score: e.currentTarget.dataset.index
+    })
+  },
+  //输入内容
+  getContent(e){
+    this.setData({
+      content: e.detail.value
+    })
+  },
+  //提交反馈
+  sure_ordel(){
+    if (this.data.content==''){
+      config.mytoast('评价内容不能为空!')
+      return false
+    }
+    config.ajax('POST',{
+      token:'',
+      order_id:'',
+      score:'',
+      content:''
+    },'/order/order_estimate',res=>{
+
     })
   },
   /**
