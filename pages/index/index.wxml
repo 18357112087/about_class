@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='headGroup'>
   <view class='personlInfo'>
-    <image src='http://class.zzvlm.com/timg@2x.png' class='portrait'>
+    <image src='http://yueke.dazhu-ltd.cn/public/uploads{{userInfo.user_portrait}}' class='portrait'>
     </image>
     <text class='name'>鱼小二</text>
     <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image>

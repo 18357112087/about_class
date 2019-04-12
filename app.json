@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/my/my",
-    "pages/evaluate/evaluate",
-    "pages/ordel/ordel_sure/ordel_sure",
-    "pages/index/teacher_index/teacher_index",
-    
-    "pages/ordel/bargain/bargain",
     "pages/index/index",
     "pages/login/login",
+    "pages/evaluate/evaluate",
+    "pages/my/my",
+    "pages/ordel/ordel_sure/ordel_sure",
+    "pages/index/teacher_index/teacher_index",
+    "pages/ordel/bargain/bargain",
+    
+    
     "pages/my/my_adder/my_adder",
     "pages/teacher/teacher",
     

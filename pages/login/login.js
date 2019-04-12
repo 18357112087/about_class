@@ -1,5 +1,6 @@
 // pages/login/login.js
 const config = require('../../utils/util.js')
+let app = getApp()
 Page({
 
   /**
@@ -8,7 +9,7 @@ Page({
   data: {
     user_phone: '',
     user_password: '',
-    code_type: '验证码'
+    code_type: '验证码',
   },
 
   /**
@@ -97,21 +98,14 @@ Page({
       phone: this.data.user_phone,
       code: this.data.user_password
     }, '/login/user_login', res => {
-      wx.setStorage({
-        key: 'user_token',
-        data: res.data.data.user_token,
-        success: function (res) {
-          wx.switchTab({
-            url: '/pages/ordel/ordel',
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
-        },
+      wx.setStorageSync('user_token', res.data.data.user_token)
+      wx.setStorageSync('userInfo', res.data.data)
+      wx.switchTab({
+        url: '/pages/index/index',
+        success: function (res) { },
         fail: function (res) { },
-        complete: function (res) { }
+        complete: function (res) { },
       })
-
     })
   },
   /**

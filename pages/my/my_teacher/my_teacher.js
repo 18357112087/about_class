@@ -1,22 +1,32 @@
 // pages/my/my_teacher/my_teacher.js
+const config=require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    teacher:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
-  to_res(){
+  get_myteacher() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_teacher', res => {
+      this.setData({
+        teacher: res.data.data
+      })
+    })
+  },
+  to_res(e){
     wx.navigateTo({
-      url: '/pages/index/teacher_index/teacher_index',
+      url: '/pages/index/teacher_index/teacher_index?id=' + e.currentTarget.dataset.id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
@@ -33,7 +43,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.get_myteacher()
   },
 
   /**

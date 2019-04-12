@@ -114,15 +114,18 @@
   height: auto;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .list_head_val{
   width: 32rpx;
   height: 32rpx;
+  /* margin-right: auto; */
 }
 .list_head_name{
   font-size: 24rpx;
   color: rgba(44, 44, 44, 1);
   margin-left: 4rpx;
+  margin-right: auto;
 }
 .icon-xingxing{
   font-size: 16rpx;

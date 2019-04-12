@@ -1,6 +1,7 @@
 const config = require('../../utils/util.js')
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 var qqmapsdk;
+let app=getApp()
 Page({
 
   /**
@@ -17,7 +18,8 @@ Page({
     level_list: ['中级', '高级', '特级'],
     level_index: 0,
     date: '2019-04-05',
-    time: '09:00'
+    time: '09:00',
+    userInfo:null
   },
 
   /**
@@ -27,7 +29,7 @@ Page({
     let year = new Date().getFullYear();
     let mouth = new Date().getMonth() + 1;
     mouth = mouth > 10 ? mouth : '0' + mouth
-    let day = new Date().getDay();
+    let day = new Date().getDate();
     day = day > 10 ? day : '0' + day
     this.setData({
       date: year + '-' + mouth + '-' + day
@@ -35,6 +37,9 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
   },
   //年级列表
   getGrade_lsit() {
@@ -74,12 +79,6 @@ Page({
   //选择位置并下单
   moveToLocation: function () {
     var that = this;
-    wx.navigateTo({
-      url: '/pages/index/select_teacher/select_teacher',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
     wx.chooseLocation({
       success: function (res) {
         qqmapsdk.reverseGeocoder({
@@ -90,16 +89,16 @@ Page({
           success: function (addressRes) {
             var address = addressRes.result.formatted_addresses.recommend;
             config.ajax('POST', {
-              token: '',        //token 
+              token: wx.getStorageSync('user_token'),        //token 
               subjects_id: that.data.class_list[that.data.class_index].subjects_id,  //科目id 
               grade_id: that.data.grade_list[that.data.grade_index].grade_id,     //年级id
               teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id,   //级别id
-              reservetime: that.data.date + '' + that.data.time,     //预约时间 格式为“2019-04-06 18:00”
+              reservetime: that.data.date +" "+ that.data.time,     //预约时间 格式为“2019-04-06 18:00”
               address: address,
               latitude: res.latitude,
               longitude: res.longitude,
               //少一个标签选择
-            }, '/user/order/place_order', res => {
+            }, '/order/place_order', res => {
               wx.navigateTo({
                 url: '/pages/index/select_teacher/select_teacher?order_id=' + res.data.data.order_id,
                 success: function (res) { },

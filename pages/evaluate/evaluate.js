@@ -7,8 +7,8 @@ Page({
    */
   data: {
     content:'',
-    start: [1, 2, 3, 4, 5],
-    score:3
+    score:4,
+    read:false
   },
 
   /**
@@ -19,7 +19,7 @@ Page({
   },
   //评星
   tabStart(e){
-    console.log(e.currentTarget.dataset.index)
+
     this.setData({
       score: e.currentTarget.dataset.index
     })

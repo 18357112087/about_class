@@ -7,7 +7,7 @@
       </view>
       <text class='info_mintitle'>天津工业大学 · 环境监测</text>
     </view>
-    <image class='info_val' src='{{teacher_info.teacher_portrait}}'></image>
+    <image class='info_val' src='http://yueke.dazhu-ltd.cn/public/uploads/{{teacher_info.teacher_portrait}}'></image>
   </view>
   <view class='class'>
     <view class='class_title'>
@@ -29,12 +29,10 @@
     </view>
     <view class='evaluate_list' wx:for="{{teacher_eveList}}" wx:for-item="item">
       <view class='list_head'>
-        <image src='{{item.user_portrait}}' class='list_head_val'></image>
+        <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.user_portrait}}' class='list_head_val'></image>
         <text class='list_head_name'>{{item.user_nickname}}</text>
-        <block>
-          <text class='iconfont icon-xingxing {{item.order_estimate_score>myindex?"":"ml"}}' wx:for="[1,2,3,4,5]" wx:for-index="myindex" ></text>
-        </block>
-        <text class='list_head_time '>{{item.order_estimatetime}}</text>
+        <start score="{{item.order_estimate_score-1}}" only-read="{{read}}" font-size="16rpx"></start>
+        <text class='list_head_time '>{{item.order_estimatetime.btTime}}</text>
       </view>
       <view class='list_res'>
         {{item.order_estimate_content}}

@@ -45,5 +45,5 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 68rpx;
+  margin-top: 100rpx;
 }

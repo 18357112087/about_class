@@ -32,16 +32,18 @@ page {
 }
 
 .price_group {
-  width: 330rpx;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 0rpx 30rpx;
 }
 
 .sure_button {
-  width: 282rpx;
+  width: 50%;
   height: 102rpx;
   background-color: rgba(96, 234, 243, 1);
   font-size: 36rpx;

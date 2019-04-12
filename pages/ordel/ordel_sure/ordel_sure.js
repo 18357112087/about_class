@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
     other_list:[{
       label:'附加车费',
       check:true,
@@ -24,11 +25,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id:options.id
+    })
   },
   to_teacher_res() {
     wx.navigateTo({
-      url: '/pages/index/teacher_index/teacher_index',
+      url: '/pages/index/teacher_index/teacher_index?id=' + this.data.id,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

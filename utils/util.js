@@ -279,7 +279,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
             complete: function (res) { },
           })
         }else{
-          mytoast('服务异常')
+          mytoast(res.data.msg)
         }
       },
       error(res) {

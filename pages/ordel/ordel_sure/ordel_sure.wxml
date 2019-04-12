@@ -42,7 +42,7 @@
     <view class='money_wrap'>
       <view class='money_list borT'>
         <text class='title'>选择额外费用类别</text>
-        <text class='iconfont icon-arrow-up'></text>
+        <!-- <text class='iconfont icon-arrow-up'></text> -->
       </view>
       <view class="money_list {{index!=other_list.length-1?'borT':''}}" wx:for="{{other_list}}" wx:key='{{index}}'>
         <view class='left'>
@@ -62,12 +62,12 @@
     </view>
   </view>
 </view>
-<view class='sure_group'>
-  <view class='brid'>2</view>
-  <image class='car_img' src="http://class.zzvlm.com/car@2x.png"></image>
-  <view class='price_group'>
-    <view class='main_price'>120.0</view>
-    <view class='other_price'>额外费用¥0.00</view>
-  </view>
-  <view class='sure_button' bindtap='sure_ordel'>确定下单</view>
-</view>
+<cover-view class='sure_group'>
+  <!-- <view class='brid'>2</view>
+  <image class='car_img' src="http://class.zzvlm.com/car@2x.png"></image> -->
+  <cover-view class='price_group'>
+    <cover-view class='main_price'>120.0</cover-view>
+    <cover-view class='other_price'>额外费用¥0.00</cover-view>
+  </cover-view>
+  <cover-view class='sure_button' bindtap='sure_ordel'>确定下单</cover-view>
+</cover-view>

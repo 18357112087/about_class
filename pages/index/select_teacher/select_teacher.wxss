@@ -136,7 +136,9 @@ page {
   margin: 0 auto;
   top: 260rpx;
 }
-
+.start_group{
+  margin-top: 15rpx;
+}
 .item_wrap {
   width: 384rpx;
   height: 384rpx;

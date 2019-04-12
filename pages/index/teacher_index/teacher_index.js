@@ -8,14 +8,16 @@ Page({
   data: {
     teacher_info:null,
     teacher_eveList:[],
-    page:1
+    page:1,
+    read: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.get_init(options.id)
+    this.get_estimate(options.id)
   },
   //获取教师数据
   get_init(id){
@@ -34,7 +36,10 @@ Page({
       page:this.data.page
     }, '/index/teacher_estimate', res => {
       this.setData({
-        teacher_eveList: res.data.data
+        teacher_eveList: res.data.data.map((item)=>{
+          item.order_estimatetime = config.timeForm(item.order_estimatetime)
+          return item
+        })
       })
     })
   },

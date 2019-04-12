@@ -1,32 +1,10 @@
-<view class='head'>共有3位老师</view>
+<view class='head'>{{teacher.length>0?'共有'+teacher.length+'位老师':'您暂无任何老师'}}</view>
 <view class='list_wrap'>
-  <view class='list borT' bindtap='to_res'>
-    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+  <view class='list borT' bindtap='to_res' data-id='{{item.teacher_id}}' wx:for="{{teacher}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <image class='top_val' src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
     <view class='top_res'>
       <view class='top_res_title'>
-        <text class='top_res_name'>朱萧木</text>
-        <text class='top_res_label'>卓越</text>
-        <text class='top_res_label'>卓越</text>
-      </view>
-      <view class='top_res_detail'>天津工业大学 · 环境监测</view>
-    </view>
-  </view>
-  <view class='list borT' bindtap='to_res'>
-    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
-    <view class='top_res'>
-      <view class='top_res_title'>
-        <text class='top_res_name'>朱萧木</text>
-        <text class='top_res_label'>卓越</text>
-        <text class='top_res_label'>卓越</text>
-      </view>
-      <view class='top_res_detail'>天津工业大学 · 环境监测</view>
-    </view>
-  </view>
-  <view class='list borT' bindtap='to_res'>
-    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
-    <view class='top_res'>
-      <view class='top_res_title'>
-        <text class='top_res_name'>朱萧木</text>
+        <text class='top_res_name'>{{item.teacher_realname}}</text>
         <text class='top_res_label'>卓越</text>
         <text class='top_res_label'>卓越</text>
       </view>

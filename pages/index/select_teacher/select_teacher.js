@@ -6,21 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [1,2,3,4,5]
+    list: [],
+    read:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
- 
+    this.getTeachers(options.order_id)
   },
   //获取匹配的老师
-  getTeachers(){
+  getTeachers(order_id){
     config.ajax('POST', {
-      token: '',   //token
-      order_id: ''  //订单id
+      token: wx.getStorageSync('user_token'),   //token
+      order_id: order_id  //订单id
     }, '/order/select_teacher', res => {
       setTimeout(() => {
         this.setData({
@@ -29,9 +29,9 @@ Page({
       }, 3000)
     })
   },
-  to_teacherRes(){
+  to_teacherRes(e){
     wx.navigateTo({
-      url: '/pages/ordel/ordel_sure/ordel_sure',
+      url: '/pages/ordel/ordel_sure/ordel_sure?id=' + e.currentTarget.dataset.id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
