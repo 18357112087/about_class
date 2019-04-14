@@ -2,12 +2,12 @@
   <view class='head_name'>
     <view class='head_nameGroup'>
       <view class='name'>
-        <text class='name_title'>小环琳儿</text>
+        <text class='name_title'>{{userInfo.user_nickname}}</text>
         <!-- <text class='iconfont icon-bianji1'></text> -->
       </view>
       <!-- <text class='mintitle'>每天一斤酒赛过活神仙</text> -->
     </view>
-    <image class='portrait' src='http://yueke.dazhu-ltd.cn/public/uploads{{userInfo.user_portrait}}'></image>
+    <image class='portrait' src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}'></image>
   </view>
   <view class='head_other'>
     <view class='otherItem' bindtap='to_ordel'>
@@ -15,14 +15,14 @@
         <text class='iconfont icon-kemusi'></text>
         <text class='left_mintitle'>全部订单</text>
       </view>
-      <text class='right'>0</text>
+      <text class='right'>{{ordel_count}}</text>
     </view>
     <view class='otherItem' bindtap='to_myteacher'>
       <view class='left'>
         <text class='iconfont icon-wodedangxuan1 '></text>
         <text class='left_mintitle'>我的老师</text>
       </view>
-      <text class='right'>0</text>
+      <text class='right'>{{teacher_count}}</text>
     </view>
 
   </view>

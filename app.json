@@ -7,7 +7,9 @@
     "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/teacher_index/teacher_index",
     "pages/ordel/bargain/bargain",
-    
+    "pages/income_details/income_details",
+    "pages/income/income",
+    "pages/wallet/wallet",
     
     "pages/my/my_adder/my_adder",
     "pages/teacher/teacher",

@@ -18,9 +18,15 @@ Page({
   onLoad: function (options) {
 
   },
+  get_userInfo() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info', res => {
+      wx.setStorageSync('userInfo', res.data.data)
+    })
+  },
   //获取用户信息
   getUserInfo(res) {
-    console.log(res)
     this.to_index()
   },
   //发送验证码
@@ -99,7 +105,7 @@ Page({
       code: this.data.user_password
     }, '/login/user_login', res => {
       wx.setStorageSync('user_token', res.data.data.user_token)
-      wx.setStorageSync('userInfo', res.data.data)
+      this.get_userInfo()
       wx.switchTab({
         url: '/pages/index/index',
         success: function (res) { },

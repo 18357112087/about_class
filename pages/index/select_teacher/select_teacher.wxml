@@ -15,8 +15,8 @@
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
-        <text class='name'>小样儿</text>
-        <text class='name_features'>生动形象</text>
+        <text class='name'>{{item.teacher_realname}}</text>
+        <text class='name_features'>{{item.teacher_age}}</text>
       </view>
       <view class='start_group'>
         <text class='iconfont icon-xingxing select'></text>
@@ -44,8 +44,8 @@
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
-        <text class='name'>小样儿</text>
-        <text class='name_features'>生动形象</text>
+        <text class='name'>{{item.teacher_realname}}</text>
+        <text class='name_features'>{{item.teacher_age}}</text>
       </view>
       <view class='start_group'>
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -56,8 +56,8 @@
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
-        <text class='name'>小样儿</text>
-        <text class='name_features'>生动形象</text>
+        <text class='name'>{{item.teacher_realname}}</text>
+        <text class='name_features'>{{item.teacher_age}}</text>
       </view>
       <view class='start_group'>
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -68,8 +68,8 @@
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
-        <text class='name'>小样儿</text>
-        <text class='name_features'>生动形象</text>
+        <text class='name'>{{item.teacher_realname}}</text>
+        <text class='name_features'>{{item.teacher_age}}</text>
       </view>
       <view class='start_group'>
        <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -80,8 +80,8 @@
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
-        <text class='name'>小样儿</text>
-        <text class='name_features'>生动形象</text>
+        <text class='name'>{{item.teacher_realname}}</text>
+        <text class='name_features'>{{item.teacher_age}}</text>
       </view>
       <view class='start_group'>
         <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>

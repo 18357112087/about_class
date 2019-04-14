@@ -7,7 +7,16 @@ Page({
    */
   data: {
     userInfo:null,
-    teacher:[]
+    ordel_count:0,
+    teacher_count:0
+  },
+  to_wallet() {
+    wx.navigateTo({
+      url: '/pages/income/income',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
   call(){
     config.mytoast('点此打电话')
@@ -21,7 +30,7 @@ Page({
   //获取个人信息
   get_userInfo(){
     config.ajax('POST',{
-      token:''
+      token:wx.getStorageSync('user_token')
     },'/user/user_info',res=>{
       this.setData({
         userInfo:res.data.data
@@ -38,8 +47,6 @@ Page({
       })
     })
   },
-  //全部订单
-  
   to_myteacher(){
     wx.navigateTo({
       url: '/pages/my/my_teacher/my_teacher',
@@ -95,7 +102,26 @@ Page({
       userInfo: wx.getStorageSync('userInfo')
     })
   },
-
+  //获取订单数量
+  get_ordel_count() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_order_count', res => {
+      this.setData({
+        ordel_count: res.data.data.order_count
+      })
+    })
+  },
+  //获取我的老师
+  get_balance() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_teacher_count', res => {
+      this.setData({
+        teacher_count: res.data.data.teacher_count
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

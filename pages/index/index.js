@@ -18,7 +18,8 @@ Page({
     level_list: ['中级', '高级', '特级'],
     level_index: 0,
     date: '2019-04-05',
-    time: '09:00',
+    start_time: '09:00',
+    end_time:'18:00',
     userInfo:null
   },
 
@@ -69,12 +70,6 @@ Page({
   //一键下单
   sure() {
     this.moveToLocation()
-    // wx.navigateTo({
-    //   url: '/pages/index/select_teacher/select_teacher',
-    //   success: function(res) {},
-    //   fail: function(res) {},
-    //   complete: function(res) {},
-    // })
   },
   //选择位置并下单
   moveToLocation: function () {
@@ -93,10 +88,11 @@ Page({
               subjects_id: that.data.class_list[that.data.class_index].subjects_id,  //科目id 
               grade_id: that.data.grade_list[that.data.grade_index].grade_id,     //年级id
               teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id,   //级别id
-              reservetime: that.data.date +" "+ that.data.time,     //预约时间 格式为“2019-04-06 18:00”
+              reservetime: that.data.date + " " + that.data.start_time,     //开始时间
               address: address,
               latitude: res.latitude,
               longitude: res.longitude,
+              // reservetime: that.data.date + " " + that.data.start_time,     //结束时间
               //少一个标签选择
             }, '/order/place_order', res => {
               wx.navigateTo({
@@ -171,9 +167,15 @@ Page({
     })
   },
   //选择时间
-  bindTimeChange(e) {
+  bindStartTimeChange(e) {
     this.setData({
-      time: e.detail.value
+      start_time: e.detail.value
+    })
+  },
+  //选择结束时间
+  bindEndTimeChange(e){
+    this.setData({
+      end_time: e.detail.value
     })
   },
   /**

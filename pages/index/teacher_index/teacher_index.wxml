@@ -3,7 +3,7 @@
     <view class='info_res'>
       <view class='info_top'>
         <text class='res_name'>{{teacher_info.teacher_realname}}</text>
-        <image class='res_rz' src='http://class.zzvlm.com/1969@2x.png'></image>
+        <!-- <image class='res_rz' src='http://class.zzvlm.com/1969@2x.png'></image> -->
       </view>
       <text class='info_mintitle'>天津工业大学 · 环境监测</text>
     </view>

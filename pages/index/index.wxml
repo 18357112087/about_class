@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class='headGroup'>
   <view class='personlInfo'>
-    <image src='http://yueke.dazhu-ltd.cn/public/uploads{{userInfo.user_portrait}}' class='portrait'>
+    <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='portrait'>
     </image>
-    <text class='name'>鱼小二</text>
-    <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image>
+    <text class='name'>{{userInfo.user_nickname}}</text>
+    <!-- <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image> -->
   </view>
 </view>
 <view class='z-5'></view>
@@ -36,15 +36,22 @@
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-    <picker mode="time" value="{{time}}" bindchange="bindTimeChange" >
+    <picker mode="time" value="{{start_time}}" bindchange="bindStartTimeChange" >
       <view class='list borT'>
         <text class='iconfont icon-shijian'></text>
-        <text class='list_title'>时间</text>
-        <view class='list_Centent'>{{time}}</view>
+        <text class='list_title'>开始时间</text>
+        <view class='list_Centent'>{{start_time}}</view>
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-
+<picker mode="time" value="{{end_time}}" bindchange="bindEndTimeChange" >
+      <view class='list borT'>
+        <text class='iconfont icon-shijian'></text>
+        <text class='list_title'>结束时间</text>
+        <view class='list_Centent'>{{end_time}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
     <picker bindchange="bindPickerChange" data-type='level' value="{{level_index}}" range="{{level_list}}" range-key='teacher_grade_name'>
       <view class='list'>
         <text class='iconfont icon-sousuoyemiantubiao'></text>

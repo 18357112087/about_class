@@ -20,6 +20,7 @@ page {
 .val_logo {
   width: 122rpx;
   height: 122rpx;
+  border-radius:50%; 
 }
 
 .white {
@@ -34,6 +35,7 @@ page {
 .mintitle {
   font-size: 28rpx;
   color: rgba(44, 44, 44, 0.5);
+  text-align: right;
 }
 
 .out_group {

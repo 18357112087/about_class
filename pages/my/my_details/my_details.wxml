@@ -1,11 +1,11 @@
 <view class="content">
 <view class='list list_val white' bindtap='user_val'>
   <text class='title'>头像</text>
-  <image src='http://yueke.dazhu-ltd.cn/public/uploads{{userInfo.user_portrait}}' class='val_logo'></image>
+  <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='val_logo'></image>
 </view>
-  <view class='list' bindtap='user_name'>
+  <view class='list'>
     <text class='title'>昵称</text>
-    <text class='mintitle'>{{userInfo.user_nickname}}</text>
+    <input class='mintitle' value='{{userInfo.user_nickname}}' bindinput='userName'></input>
   </view>
   <view class='list white' bindtap='bind_phone'>
     <text class='title'>手机号</text>
@@ -17,15 +17,16 @@
     <text class='mintitle'>{{sex_list[sex_index].label}}</text>
   </view>
   </picker>
-
-  <view class='list white' bindtap='user_age'>
-    <text class='title'>年龄</text>
-    <text class='mintitle'>请选择</text>
+  <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
+      <view class='list' >
+     <text class='title'>年龄</text>
+    <text class='mintitle'>{{age_list[age_index].label}}</text>
   </view>
-  <view class='list' bindtap='to_adder'>
+  </picker>
+  <view class='list'>
     <text class='title'>我的地址</text>
-    <text class='mintitle'>{{userInfo.user_address}}</text>
+     <input class='mintitle' value='{{userInfo.user_address}}' bindinput='bindadder'></input>
   </view>
 </view>
 
-<view class='out_group' bindtap='out'>保存</view>
+<view class='out_group' bindtap='save'>保存</view>

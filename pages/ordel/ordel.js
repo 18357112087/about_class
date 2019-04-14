@@ -7,20 +7,49 @@ Page({
    */
   data: {
     tabindex: 0,
-    tab_list: ['进行中', '已完成']
+    tab_list: ['进行中', '已完成'],
+    list:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.gitdata()
   },
   select_tab(e) {
     this.setData({
       tabindex: e.currentTarget.dataset.index
     })
-
+    if (this.data.tabindex==0){
+      this.gitdata()
+    }else{
+      this.gitSuccess()
+    }
+  },
+  gitSuccess(){
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_order_accomplish', res => {
+      this.setData({
+        list: res.data.data.map((item) => {
+          item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
+          return item
+        })
+      })
+    })
+  },
+  gitdata(){
+    config.ajax('POST',{
+      token:wx.getStorageSync('user_token')
+    },'/user/my_order_underway',res=>{
+      this.setData({
+        list:res.data.data.map((item)=>{
+          item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
+          return item
+        })
+      })
+    })
   },
   to_res() {
     wx.navigateTo({
