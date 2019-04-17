@@ -1,14 +1,14 @@
 const config = require('../../utils/util.js')
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 var qqmapsdk;
-let app=getApp()
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    default_src:'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
     mask: true,
     min_index: 0,
     minTab_list: ['985院校', '211院校'],
@@ -20,8 +20,8 @@ Page({
     level_index: 0,
     date: '2019-04-05',
     start_time: '09:00',
-    end_time:'18:00',
-    userInfo:null
+    end_time: '18:00',
+    userInfo: null
   },
 
   /**
@@ -39,7 +39,7 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
-   
+
   },
   //年级列表
   getGrade_lsit() {
@@ -83,11 +83,11 @@ Page({
           success: function (addressRes) {
             var address = addressRes.result.formatted_addresses.recommend;
             config.ajax('POST', {
-              token: wx.getStorageSync('user_token'),        //token 
-              subjects_id: that.data.class_list[that.data.class_index].subjects_id,  //科目id 
-              grade_id: that.data.grade_list[that.data.grade_index].grade_id,     //年级id
-              teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id,   //级别id
-              reservetime: that.data.date + " " + that.data.start_time,     //开始时间
+              token: wx.getStorageSync('user_token'), //token 
+              subjects_id: that.data.class_list[that.data.class_index].subjects_id, //科目id 
+              grade_id: that.data.grade_list[that.data.grade_index].grade_id, //年级id
+              teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id, //级别id
+              reservetime: that.data.date + " " + that.data.start_time, //开始时间
               address: address,
               latitude: res.latitude,
               longitude: res.longitude,
@@ -96,9 +96,9 @@ Page({
             }, '/order/place_order', res => {
               wx.navigateTo({
                 url: '/pages/index/select_teacher/select_teacher?order_id=' + res.data.data.order_id,
-                success: function (res) { },
-                fail: function (res) { },
-                complete: function (res) { },
+                success: function (res) {},
+                fail: function (res) {},
+                complete: function (res) {},
               })
             })
           }
@@ -110,7 +110,7 @@ Page({
     });
   },
   //获取公告
-  getAdver(){
+  getAdver() {
     config.ajax('POST', {}, '/index/announcement', res => {
       this.setData({
         adver: res.data.data.url
@@ -172,7 +172,7 @@ Page({
     })
   },
   //选择结束时间
-  bindEndTimeChange(e){
+  bindEndTimeChange(e) {
     this.setData({
       end_time: e.detail.value
     })

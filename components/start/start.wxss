@@ -1,10 +1,15 @@
 /* compand/start.wxss */
-@font-face {font-family: "iconfont";
-  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950'); /* IE9 */
-  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.woff?t=1554112773950') format('woff'),
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.ttf?t=1554112773950') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.svg?t=1554112773950#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.woff?t=1554112773950') format('woff'),
+    url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.ttf?t=1554112773950') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.svg?t=1554112773950#iconfont') format('svg');
+  /* iOS 4.1- */
 }
 
 .iconfont {
@@ -141,16 +146,23 @@
 .icon-gouxuan:before {
   content: "\e60a";
 }
-.icon-xingxing{
+
+.icon-xingxing {
   /* font-size: 20rpx; */
-  color:rgba(247, 133, 0, 0.4);
+  color: rgba(247, 133, 0, 0.4);
   margin-right: 10rpx;
   display: block;
 }
-.startWrap{
+
+.startWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
-.active{
-    color: rgba(255, 153, 73, 1);
+
+.active {
+  color: rgba(255, 153, 73, 1);
 }

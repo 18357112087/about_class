@@ -1,38 +1,51 @@
-page{
+page {
   background-color: RGBA(223, 243, 250, 1);
 }
-.list{
+
+.list {
   width: 100%;
   height: 96rpx;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0rpx 32rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: rgba(255, 255, 255, 1);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 16rpx;
   font-size: 34rpx;
 }
-.title{
+
+.title {
   color: rgba(44, 44, 44, 1);
 }
-.icon-arr-right-red{
+
+.icon-arr-right-red {
   font-size: 26rpx;
   color: rgba(96, 234, 243, 1);
 }
-.list_ipt{
+
+.list_ipt {
   width: 100%;
   height: 100%;
   font-size: 34rpx;
   /* color: rgba(153, 153, 153, 1); */
 }
-#map{
+
+#map {
   width: 680rpx;
   height: 544rpx;
   background-color: rgba(255, 255, 255, 1);
   margin: 0 auto;
   margin-top: 32rpx;
 }
+
 .buttom {
   /* position: fixed; */
   /* bottom: 0; */

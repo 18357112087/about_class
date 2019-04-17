@@ -9,11 +9,20 @@ page {
 .content {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-    background-color: RGBA(41, 75, 83, 1);
+  background-color: RGBA(41, 75, 83, 1);
 }
 
 .logo {
@@ -32,7 +41,9 @@ page {
 @-webkit-keyframes gogogo {
   0% {
     -webkit-transform: rotate(0deg);
-  }/* 25% {
+  }
+
+  /* 25% {
     -webkit-transform: rotate(60deg);
   }
   50% {
@@ -76,6 +87,7 @@ page {
 }
 
 .list {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 14rpx;
   overflow: hidden;
@@ -85,64 +97,86 @@ page {
 }
 
 .item {
- 
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
-.w300{
-   width: 300rpx;
+
+.w300 {
+  width: 300rpx;
 }
-.tfl{
+
+.tfl {
   position: absolute;
   top: 0;
   left: 0;
 }
-.bfr{
+
+.bfr {
   position: absolute;
   top: 642rpx;
   right: 0;
 }
-.bfl{
+
+.bfl {
   position: absolute;
   top: 710rpx;
   left: 0;
 }
-.tfr{
+
+.tfr {
   position: absolute;
   top: 20rpx;
   right: 0;
 }
-.item .w224{
+
+.item .w224 {
   width: 224rpx;
   height: 224rpx;
 }
-.item .w176{
+
+.item .w176 {
   width: 176rpx;
   height: 176rpx;
 }
-.item .w128{
+
+.item .w128 {
   width: 128rpx;
   height: 128rpx;
 }
-.item .w256{
+
+.item .w256 {
   width: 256rpx;
   height: 256rpx;
 }
-.centent{
+
+.centent {
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
   top: 260rpx;
 }
-.start_group{
+
+.start_group {
   margin-top: 15rpx;
 }
+
 .item_wrap {
   width: 384rpx;
   height: 384rpx;
   border-radius: 50%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20rpx;
   border: 2rpx dashed rgba(96, 234, 243, 1);
@@ -154,8 +188,14 @@ page {
 }
 
 .name_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 16rpx;
 }

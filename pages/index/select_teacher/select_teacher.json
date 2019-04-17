@@ -1,5 +1,6 @@
 {
- "usingComponents": {
-  "start": "/components/start/start"
-}
+  "navigationBarTitleText": "匹配教师",
+  "usingComponents": {
+    "start": "/components/start/start"
+  }
 }

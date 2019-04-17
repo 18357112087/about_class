@@ -1,14 +1,14 @@
 // page/evaluate/evaluate.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content:'',
-    score:4,
-    read:false
+    content: '',
+    score: 4,
+    read: false
   },
 
   /**
@@ -18,31 +18,30 @@ Page({
 
   },
   //评星
-  tabStart(e){
-
+  tabStart(e) {
     this.setData({
       score: e.currentTarget.dataset.index
     })
   },
   //输入内容
-  getContent(e){
+  getContent(e) {
     this.setData({
       content: e.detail.value
     })
   },
   //提交反馈
-  sure_ordel(){
-    if (this.data.content==''){
+  sure_ordel() {
+    if (this.data.content == '') {
       config.mytoast('评价内容不能为空!')
       return false
     }
-    config.ajax('POST',{
-      token:'',
-      order_id:'',
-      score:'',
-      content:''
-    },'/order/order_estimate',res=>{
-
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'), //token 
+      order_id: '',
+      score: '',
+      content: ''
+    }, '/order/order_estimate', res => {
+      config.mytoast('评价成功')
     })
   },
   /**

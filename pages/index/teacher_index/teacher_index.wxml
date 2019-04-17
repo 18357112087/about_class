@@ -34,9 +34,7 @@
         <start score="{{item.order_estimate_score-1}}" only-read="{{read}}" font-size="16rpx"></start>
         <text class='list_head_time '>{{item.order_estimatetime.btTime}}</text>
       </view>
-      <view class='list_res'>
-        {{item.order_estimate_content}}
-      </view>
+      <view class='list_res'>{{item.order_estimate_content}}</view>
     </view>
   </view>
 </view>

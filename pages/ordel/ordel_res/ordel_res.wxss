@@ -1,7 +1,9 @@
 .head {
   width: 750rpx;
   height: 144rpx;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(104, 227, 245, 1)), to(rgba(123, 235, 221, 1)));
   background: linear-gradient(90deg, rgba(104, 227, 245, 1) 0%, rgba(123, 235, 221, 1) 100%);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0rpx 32rpx;
 }
@@ -9,7 +11,12 @@
 .left {
   width: 400rpx;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -27,6 +34,7 @@
 .wrap {
   width: 100%;
   height: auto;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0rpx 32rpx;
 }
@@ -34,7 +42,11 @@
 .head_top {
   width: 100%;
   height: 176rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -45,13 +57,22 @@
 
 .top_res {
   /* width: 450rpx; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin-left: 16rpx;
 }
 
 .top_res_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -90,8 +111,14 @@
 .list_item {
   width: 100%;
   height: 60rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -108,8 +135,14 @@
 .price_group {
   width: 100%;
   height: 84rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -125,7 +158,12 @@
 
 .tip_group {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -141,27 +179,48 @@
   width: 750rpx;
   height: 98rpx;
   background: rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0rpx 0rpx 12rpx rgba(0, 0, 0, 0.07);
   box-shadow: 0rpx 0rpx 12rpx rgba(0, 0, 0, 0.07);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.cendel{
+
+.cendel {
   width: 462rpx;
   height: 100%;
   font-size: 34rpx;
   color: rgba(153, 153, 153, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-align-items: center;
-justify-content: center
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
 }
-.payed{
-  width:288rpx;
-height:100%;
-background:rgba(96,234,243,1); 
-color: rgba(255, 255, 255, 1);
-font-size: 34rpx;
-display: flex;
-align-items: center;
-justify-content: center
+
+.payed {
+  width: 288rpx;
+  height: 100%;
+  background: rgba(96, 234, 243, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 34rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
 }

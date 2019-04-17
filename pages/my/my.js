@@ -102,6 +102,8 @@ Page({
     this.setData({
       userInfo: wx.getStorageSync('userInfo')
     })
+    this.get_ordel_count()
+    this.get_balance()
   },
   //获取订单数量
   get_ordel_count() {

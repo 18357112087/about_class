@@ -1,10 +1,10 @@
 <view class='list borT' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap='list_detail' data-id="{{}}">
-    <view class='list_group'>
-      <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>
-      <view class='list_group_res'>
-        <text class='list_group_title'>消费</text>
-        <text class='list_group_mintitle'>{{item.user_balance_createtime}}</text>
-      </view>
+  <view class='list_group'>
+    <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>
+    <view class='list_group_res'>
+      <text class='list_group_title'>{{item.user_balance_explain}}</text>
+      <text class='list_group_mintitle'>{{item.user_balance_createtime}}</text>
     </view>
-    <text class='list_price'>-{{item.user_balance_money}}</text>
+  </view>
+  <text class='list_price'>-{{item.user_balance_money}}</text>
 </view>
