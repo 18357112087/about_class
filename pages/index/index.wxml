@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class='headGroup'>
   <view class='personlInfo'>
-    <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='portrait'>
+    <image src="{{userInfo.user_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.user_portrait:default_src}}" class='portrait'>
     </image>
-    <text class='name'>{{userInfo.user_nickname}}</text>
+    <text class='name'>{{userInfo.user_nickname?userInfo.user_nickname:'暂未登陆'}}</text>
     <!-- <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image> -->
   </view>
 </view>

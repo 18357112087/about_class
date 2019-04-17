@@ -50,6 +50,34 @@ function timeForm(time) {
     btTime: btTimeStr
   };
 }
+//支付函数
+function pay(res, successData) {
+  wx.requestPayment({
+    "timeStamp": res.data.data.timeStamp,
+    "nonceStr": res.data.data.nonceStr,
+    "package": res.data.data.package,
+    "signType": "MD5",
+    "paySign": res.data.data.paySign,
+    "success": function (res) {
+      wx.showToast({
+        title: '支付完成',
+        icon: "success",
+        duration: 1500,
+        success: function (data) {
+          successData(data)
+        }
+      })
+    },
+    "fail": function (res) {
+      console.log(res)
+      wx.showToast({
+        title: '取消支付成功！',
+        icon: "success",
+        duration: 1500,
+      })
+    }
+  })
+}
 /**
  * 封装自定义优美的toast
  */
@@ -327,6 +355,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
 
 //导出模块
 module.exports = {
+  pay:pay,
   https: https,
   ajax: ajax,
   rem: rem,

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    default_src:'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
     mask: true,
     min_index: 0,
     minTab_list: ['985院校', '211院校'],
@@ -38,9 +39,7 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
-    this.setData({
-      userInfo: wx.getStorageSync('userInfo')
-    })
+   
   },
   //年级列表
   getGrade_lsit() {
@@ -182,7 +181,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
   },
 
   /**
