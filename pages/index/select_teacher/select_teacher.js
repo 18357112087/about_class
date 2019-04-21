@@ -14,6 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      order_id: options.order_id
+    })
     this.getTeachers(options.order_id)
   },
   //获取匹配的老师
@@ -31,7 +34,7 @@ Page({
   },
   to_teacherRes(e){
     wx.navigateTo({
-      url: '/pages/ordel/ordel_sure/ordel_sure?id=' + e.currentTarget.dataset.id,
+      url: '/pages/ordel/ordel_sure/ordel_sure?id=' + e.currentTarget.dataset.id + '&order_id=' + this.data.order_id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

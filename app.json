@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login",
     "pages/evaluate/evaluate",
+    "pages/ordel/bargain/bargain",
+    "pages/login/login",
     "pages/my/my",
     "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/teacher_index/teacher_index",
-    "pages/ordel/bargain/bargain",
+    
     "pages/income_details/income_details",
     "pages/income/income",
     "pages/wallet/wallet",
@@ -22,7 +23,6 @@
     "pages/ordel/ordel_res/ordel_res",
     "pages/ordel/sure_ordel/ordel_sure",
     "pages/index/select_teacher/select_teacher",
-    
     "pages/ordel/ordel"
   ],
   "window": {

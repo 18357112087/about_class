@@ -21,7 +21,9 @@ Page({
     date: '2019-04-05',
     start_time: '09:00',
     end_time: '18:00',
-    userInfo: null
+    userInfo: null,
+    time_list:[1,2,3,4,5,6,7],
+    time_index:0
   },
 
   /**
@@ -81,14 +83,15 @@ Page({
             longitude: res.longitude
           },
           success: function (addressRes) {
-            var address = addressRes.result.formatted_addresses.recommend;
+            console.log(addressRes)
+            var address = addressRes.result.address+addressRes.result.formatted_addresses.recommend;
             config.ajax('POST', {
               token: wx.getStorageSync('user_token'), //token 
               subjects_id: that.data.class_list[that.data.class_index].subjects_id, //科目id 
               grade_id: that.data.grade_list[that.data.grade_index].grade_id, //年级id
               teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id, //级别id
               reservetime: that.data.date + " " + that.data.start_time, //开始时间
-              address: address,
+              name: address,
               latitude: res.latitude,
               longitude: res.longitude,
               // reservetime: that.data.date + " " + that.data.start_time,     //结束时间
@@ -171,10 +174,10 @@ Page({
       start_time: e.detail.value
     })
   },
-  //选择结束时间
-  bindEndTimeChange(e) {
+  //选择时长
+  bindtime(e) {
     this.setData({
-      end_time: e.detail.value
+      time_index: e.detail.value
     })
   },
   /**

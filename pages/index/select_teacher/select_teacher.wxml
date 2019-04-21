@@ -57,7 +57,7 @@
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
-        <text class='name_features'>{{item.teacher_age}}</text>
+        <text class='name_features'>{{item.teacher_age}}岁</text>
       </view>
       <view class='start_group'>
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>

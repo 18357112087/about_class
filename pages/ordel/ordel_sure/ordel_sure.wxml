@@ -24,11 +24,11 @@
     </view>
     <view class='orde_list'>
       <text class='list_title'>年级:</text>
-      <text class='list_mintitle'>初中一年级</text>
+      <text class='list_mintitle'>{{info.grade_name}}</text>
     </view>
     <view class='orde_list'>
       <text class='list_title'>科目:</text>
-      <text class='list_mintitle'>英语</text>
+      <text class='list_mintitle'>{{info.subjects_name}}</text>
     </view>
     <view class='orde_list'>
       <text class='list_title'>时间:</text>
@@ -51,13 +51,13 @@
         </view>
         <view class='right'>
           <text class='ipt_before'>￥</text>
-          <input class='ipt_money' placeholder='填写金额' value='{{item.money}}'></input>
+          <input class='ipt_money' type='number' placeholder='填写金额' value='{{item.money}}' bindinput='get_value' data-index='{{index}}'></input>
         </view>
       </view>
     </view>
     <view class='bz'>
       <text class='list_title'>备注:</text>
-      <input class='list_mintitle' placeholder='输入备注信息' style='width:300rpx'></input>
+      <input class='list_mintitle' placeholder='输入备注信息' value='{{remark}}' style='width:300rpx' bindinput='get_remark'></input>
       <text class='tip'>10/10</text>
     </view>
   </view>
@@ -66,8 +66,8 @@
   <!-- <view class='brid'>2</view>
   <image class='car_img' src="http://class.zzvlm.com/car@2x.png"></image> -->
   <cover-view class='price_group'>
-    <cover-view class='main_price'>120.0</cover-view>
-    <cover-view class='other_price'>额外费用¥0.00</cover-view>
+    <cover-view class='main_price'>{{info.valuation_price}}</cover-view>
+    <cover-view class='other_price'>额外费用¥{{all}}</cover-view>
   </cover-view>
   <cover-view class='sure_button' bindtap='sure_ordel'>确定下单</cover-view>
 </cover-view>

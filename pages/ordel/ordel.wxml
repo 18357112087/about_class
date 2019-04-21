@@ -2,11 +2,11 @@
     <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>{{item}}</view>
 </view>
 <view class='content'>
-  <view class='list' bindtap='to_res' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+  <view class='list' bindtap='to_res' data-id='{{item.order_id}}' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
     <view class='list_head borT'>
         <image  class='head_portrait' src="{{item.teacher_portrait?item.teacher_portrait:'http://yueke.dazhu-ltd.cn/public/uploads/20190413/0e64f0cd953a240dafcad89cba5eccd0.jpg'}}"></image>
         <text class='head_name'>{{item.teacher_realname?item.teacher_realname:'暂未匹配'}}</text>
-        <text class='head_time'>{{item.order_reservetime}}</text>
+        <text class='head_time'>{{item.order_createtime}}</text>
         <text  class='head_ordel_money'>订单金额:￥{{item.order_money}}</text>
     </view>
     <view class='classInfo borT'>
@@ -17,8 +17,8 @@
         </view>
         <view class='line'></view>
         <view class='class_time'>
-          <text class='title'>12:00~13:00</text>
-          <text class='min_title'>7-12（周四）</text>
+          <text class='title'>{{item.startTime}}~{{item.endTime}}</text>
+          <text class='min_title'>{{item.order_reservetime.month}}-{{item.order_reservetime.day}}</text>
         </view>
       </view>
       <text class='ordert_type'>{{item.order_status==1?'待匹配教师,请匹配教师':item.order_status==2?'待老师接单,请稍等':item.order_status==3?'老师已接单,请付款':item.order_status==4?'等待老师授课':item.order_status==5?'老师已授课完毕，快去评价吧':item.order_status==6?'老师已授课完毕，快去评价吧':'订单已完成'}}</text>
@@ -27,8 +27,8 @@
       <view class='scope_normel_button' catchtap='to_bargain' wx:if="{{item.order_status==3}}">找人砍价</view>
       <view class='scope_normel_button' catchtap='cendel_ordel' wx:if="{{item.order_status<4}}">取消订单</view>  
       <!-- <view class='scope_normel_button button_active'>立即付款</view> -->
-      <view class='scope_normel_button button_active' wx:if="{{item.order_status==5}}">去评价</view>
-       <view class='scope_normel_button button_active' wx:if="{{item.order_status==1}}">立即匹配</view>
+      <view class='scope_normel_button button_active' wx:if="{{item.order_status==5}}" catchtap='to_ecent'>去评价</view>
+       <view class='scope_normel_button button_active' wx:if="{{item.order_status==1}}" catchtap='to_select' data-order_id='{{item.order_id}}'>立即匹配</view>
     </view>
   </view>
 </view>

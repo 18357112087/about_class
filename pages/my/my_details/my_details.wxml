@@ -8,7 +8,7 @@
     <input class='mintitle' value='{{userInfo.user_nickname}}' bindinput='userName'></input>
   </view>
   <view class='list white' bindtap='bind_phone'>
-    <text class='title'>手机号</text>
+    <text class='title'>更换手机号</text>
     <text class='mintitle'>{{userInfo.user_phone}}</text>
   </view>
   <picker range="{{sex_list}}" range-key="label" bindchange='bindchange'>

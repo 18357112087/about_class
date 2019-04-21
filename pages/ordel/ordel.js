@@ -33,10 +33,21 @@ Page({
     }, '/user/my_order_accomplish', res => {
       this.setData({
         list: res.data.data.map((item) => {
+          item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
+          item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
+          item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
       })
+    })
+  },
+  to_select(e){
+    wx.navigateTo({
+      url: '/pages/index/select_teacher/select_teacher?order_id=' + e.currentTarget.dataset.order_id,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   gitdata(){
@@ -45,15 +56,18 @@ Page({
     },'/user/my_order_underway',res=>{
       this.setData({
         list:res.data.data.map((item)=>{
+          item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
+          item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
+          item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
       })
     })
   },
-  to_res() {
+  to_res(e) {
     wx.navigateTo({
-      url: '/pages/ordel/ordel_res/ordel_res',
+      url: '/pages/ordel/ordel_res/ordel_res?order_id='+e.currentTarget.dataset.id,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

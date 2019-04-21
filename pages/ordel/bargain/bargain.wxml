@@ -80,8 +80,8 @@
   <view class='button_group margin0' bindtap='look_res'>查看订单</view>
 </view>
 
-<view class='mask' wx:if="{{mask}}" bindtap='show_mask'>
-  <view class='mask_content'>
+<view class='mask' wx:if="{{mask}}" bindtap='hide_mask'>
+  <!-- <view class='mask_content'>
     <view class='share_group'>
       <image class='share_code' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>
       <text class='share_title'>扫码帮我</text>
@@ -99,6 +99,7 @@
         <view class='top_res_detail'>天津工业大学 · 环境监测</view>
       </view>
     </view>
-  </view>
-  <view class='button_group' style='margin-top:100rpx' catchtap='save_pic'>保存图片</view>
+  </view> -->
+   <canvas canvas-id="myCanvas" id='myCanvas' class='mask_content'/>
+  <view class='button_group' style='margin-top:100rpx' catchtap='save'>保存图片</view>
 </view>

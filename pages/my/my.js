@@ -20,7 +20,16 @@ Page({
     })
   },
   call(){
-    config.mytoast('点此打电话')
+    config.ajax('POST',{
+
+    },'/index/service_phone',res=>{
+      wx.makePhoneCall({
+        phoneNumber:res.data.url,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
