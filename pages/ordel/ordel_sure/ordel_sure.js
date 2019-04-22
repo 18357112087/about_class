@@ -57,9 +57,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let info = JSON.parse(options.info)
     this.setData({
-      id:options.id,
-      order_id: options.order_id
+      id: info.id,
+      order_id: info.order_id,
+      teacher_portrait: info.teacher_portrait,
+      teacher_realname: info.teacher_realname,
+      teacher_sex: info.teacher_sex,
+      teacher_star: info.teacher_star,
+      teacher_age: info.teacher_age
     })
     this.get_init()
   },
@@ -111,7 +117,7 @@ Page({
       order_id: this.data.order_id,    //订单id
       teacher_id: this.data.id,  //教师id
       remark:this.data.remark,    //备注
-      subjoin:a     //其它金额
+      subjoin:JSON.stringify(a)     //其它金额
     },'/order/affirm_teacher',res=>{
       wx.navigateTo({
         url: '/pages/ordel/sure_ordel/ordel_sure',

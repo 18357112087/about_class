@@ -9,6 +9,7 @@ Page({
     tabindex: 0,
     tab_list: ['进行中', '已完成'],
     list:[],
+    page:1
   },
 
   /**
@@ -19,7 +20,8 @@ Page({
   },
   select_tab(e) {
     this.setData({
-      tabindex: e.currentTarget.dataset.index
+      tabindex: e.currentTarget.dataset.index,
+      page:1
     })
     if (this.data.tabindex==0){
       this.gitdata()
@@ -42,23 +44,28 @@ Page({
     }, '/order/pay_order', res => {
       config.mytoast('支付成功!',res=>{
         setTimeout(()=>{
-          this.gitSuccess()
+          this.gitdata()
         },1000)
       })
     })
   },
   gitSuccess(){
     config.ajax('POST', {
-      token: wx.getStorageSync('user_token')
+      token: wx.getStorageSync('user_token'),
+      page: this.data.page
     }, '/user/my_order_accomplish', res => {
-      this.setData({
-        list: res.data.data.map((item) => {
+      if (res.data.data.length>0){
+        var list = res.data.data.map((item) => {
           item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
+      }
+      this.setData({
+        page:this.data.page+1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
@@ -72,16 +79,21 @@ Page({
   },
   gitdata(){
     config.ajax('POST',{
-      token:wx.getStorageSync('user_token')
+      token:wx.getStorageSync('user_token'),
+      page: this.data.page
     },'/user/my_order_underway',res=>{
-      this.setData({
-        list:res.data.data.map((item)=>{
+      if (res.data.data.length > 0) {
+        var list = res.data.data.map((item) => {
           item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
+      }
+      this.setData({
+        page: this.data.page + 1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
@@ -171,7 +183,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log(1)
+    if (this.data.tabindex == 0) {
+      this.gitdata()
+    } else {
+      this.gitSuccess()
+    }
   },
 
   /**

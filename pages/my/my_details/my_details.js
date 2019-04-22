@@ -114,7 +114,7 @@ Page({
   out(){
     config.ajax('POST',{
       token:wx.getStorageSync('user_token')
-    },'/user/suggestion_feedback',res=>{
+    },'/user/login_out',res=>{
       wx.clearStorage()
           wx.navigateTo({
             url: '/pages/login/login',

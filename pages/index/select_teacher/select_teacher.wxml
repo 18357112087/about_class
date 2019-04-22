@@ -10,7 +10,7 @@
   </view>
   <view class='list_mintitle'>请选择</view>
   <view class='list'>
-    <!-- <view class="item {{index==0?'tfl  w300':index==1?'tfr  w300':index==2?'centent':index==3?'bfl w300':index==4?'bfr w300'}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+    <!-- <view class="item {{index==0?'tfl  w300':index==1?'tfr  w300':index==2?'centent':index==3?'bfl w300':index==4?'bfr w300'}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
       <view class="item_wrap {{index==0?'w244':index==1?'w176':index==2?'':index==3?'w128':index==4?'w256'}}">
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
@@ -27,7 +27,7 @@
       </view>
     </view> -->
 
-    <view class="item w300 tfl" wx:if="{{index==2}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}'>
+    <view class="item w300 tfl" wx:if="{{index==2}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w224">
         <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
@@ -39,7 +39,7 @@
         <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
       </view>
     </view>
-    <view class="item w300 tfr" wx:if="{{index==1}}"  wx:for="{{list}}" wx:for-index="index" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}'>
+    <view class="item w300 tfr" wx:if="{{index==1}}"  wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w176">
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
@@ -51,7 +51,7 @@
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
       </view>
     </view>
-    <view class="item centent"  wx:if="{{index==0}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}'>
+    <view class="item centent"  wx:if="{{index==0}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap">
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
@@ -63,7 +63,7 @@
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
       </view>
     </view>
-    <view class="item w300 bfl" wx:if="{{index==3}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}'>
+    <view class="item w300 bfl" wx:if="{{index==3}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w128">
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>
@@ -75,7 +75,7 @@
        <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
       </view>
     </view>
-    <view class="item w300 bfr" wx:if="{{index==4}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}'>
+    <view class="item w300 bfr" wx:if="{{index==4}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w256">
        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
       </view>

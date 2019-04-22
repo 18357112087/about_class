@@ -1,6 +1,6 @@
 <view class='head'>{{teacher.length>0?'共有'+teacher.length+'位老师':'您暂无任何老师'}}</view>
 <view class='list_wrap'>
-  <view class='list borT' bindtap='to_res' data-id='{{item.teacher_id}}' wx:for="{{teacher}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+  <view class='list borT' bindtap='to_res' data-id='{{item.teacher_id}}' wx:for="{{teacher}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="index">
     <image class='top_val' src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
     <view class='top_res'>
       <view class='top_res_title'>
@@ -11,5 +11,5 @@
       <view class='top_res_detail'>天津工业大学 · 环境监测</view>
     </view>
   </view>
-   <view class='nodata' wx-if="{{teacher.length==0}}">暂无数据~</view>
+  <view class='nodata' wx-if="{{teacher.length==0}}">暂无数据~</view>
 </view>

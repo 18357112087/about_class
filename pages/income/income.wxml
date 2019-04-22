@@ -1,4 +1,4 @@
-<view class='list borT' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap='list_detail' data-id="{{}}">
+<view class='list borT' wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" bindtap='list_detail' data-id="{{}}">
   <view class='list_group'>
     <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>
     <view class='list_group_res'>
@@ -8,5 +8,4 @@
   </view>
   <text class='list_price'>-{{item.user_balance_money}}</text>
 </view>
-
 <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>

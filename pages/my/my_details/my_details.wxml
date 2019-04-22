@@ -1,7 +1,7 @@
 <view class="content">
 <view class='list list_val white' bindtap='user_val'>
   <text class='title'>头像</text>
-  <image src='{{userInfo.user_portrait}}' class='val_logo'></image>
+  <image src="{{ userInfo.user_portrait?userInfo.user_portrait_type==1?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.user_portrait:userInfo.user_portrait:default_src}}" class='val_logo'></image>
 </view>
   <view class='list'>
     <text class='title'>昵称</text>

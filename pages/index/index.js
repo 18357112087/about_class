@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png',
     mask: true,
     min_index: 0,
     minTab_list: ['985院校', '211院校'],

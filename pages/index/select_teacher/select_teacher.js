@@ -33,8 +33,17 @@ Page({
     })
   },
   to_teacherRes(e){
+    let info=JSON.stringify({
+      id: e.currentTarget.dataset.id,
+      order_id: this.data.order_id,
+      teacher_portrait: this.data.list[e.currentTarget.dataset.index].teacher_portrait,
+      teacher_realname: this.data.list[e.currentTarget.dataset.index].teacher_realname,
+      teacher_sex: this.data.list[e.currentTarget.dataset.index].teacher_sex,
+      teacher_star: this.data.list[e.currentTarget.dataset.index].teacher_star,
+      teacher_age: this.data.list[e.currentTarget.dataset.index].teacher_age
+    })
     wx.navigateTo({
-      url: '/pages/ordel/ordel_sure/ordel_sure?id=' + e.currentTarget.dataset.id + '&order_id=' + this.data.order_id,
+      url: '/pages/ordel/ordel_sure/ordel_sure?info='+info,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

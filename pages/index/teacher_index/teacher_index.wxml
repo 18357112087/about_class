@@ -15,7 +15,7 @@
       <text class='class_title_name'>优势学科</text>
     </view>
     <view class='class_kind'>
-      <view class='kind_list' wx:for="{{teacher_info.subjects_list}}" wx:for-item="item">
+      <view class='kind_list' wx:for="{{teacher_info.subjects_list}}" wx:key="{{index}}" wx:for-item="item">
         {{item.subjects_name}}
       </view>
     </view>
@@ -27,7 +27,7 @@
       <text class='class_mintitle'>{{teacher_info.teacher_estimate}}好评</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-    <view class='evaluate_list' wx:for="{{teacher_eveList}}" wx:for-item="item">
+    <view class='evaluate_list' wx:for="{{teacher_eveList}}" wx:key="{{index}}" wx:for-item="item">
       <view class='list_head'>
         <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.user_portrait}}' class='list_head_val'></image>
         <text class='list_head_name'>{{item.user_nickname}}</text>
