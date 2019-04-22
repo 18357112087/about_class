@@ -27,6 +27,26 @@ Page({
       this.gitSuccess()
     }
   },
+  to_evaluate(e){
+    wx.navigateTo({
+      url: '/pages/evaluate/evaluate?order_id=' + e.currentTarget.dataset.order_id,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  pay(e){
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id:e.currentTarget.dataset.order_id
+    }, '/order/pay_order', res => {
+      config.mytoast('支付成功!',res=>{
+        setTimeout(()=>{
+          this.gitSuccess()
+        },1000)
+      })
+    })
+  },
   gitSuccess(){
     config.ajax('POST', {
       token: wx.getStorageSync('user_token')

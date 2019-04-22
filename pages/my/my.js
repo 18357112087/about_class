@@ -24,7 +24,7 @@ Page({
 
     },'/index/service_phone',res=>{
       wx.makePhoneCall({
-        phoneNumber:res.data.url,
+        phoneNumber:res.data.data.url,
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},
@@ -36,6 +36,10 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  //跳转到老师小程序
+  to_teacher(){
+    config.mytoast('这是跳转到老师小程序')
   },
   //获取个人信息
   get_userInfo(){

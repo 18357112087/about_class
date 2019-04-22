@@ -111,6 +111,19 @@ Page({
       })
     })
   },
+  out(){
+    config.ajax('POST',{
+      token:wx.getStorageSync('user_token')
+    },'/user/suggestion_feedback',res=>{
+      wx.clearStorage()
+          wx.navigateTo({
+            url: '/pages/login/login',
+            success: function(res) {},
+            fail: function(res) {},
+            complete: function(res) {},
+          })
+    })
+  },
   bind_phone() {
     wx.navigateTo({
       url: '/pages/bind_phone/bind_phone',

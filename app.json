@@ -1,7 +1,10 @@
 {
   "pages": [
+   
     "pages/index/index",
     "pages/evaluate/evaluate",
+    "pages/xy/xy",
+    
     "pages/ordel/bargain/bargain",
     "pages/login/login",
     "pages/my/my",

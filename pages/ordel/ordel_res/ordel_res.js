@@ -13,6 +13,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      id: options.order_id
+    })
     this.get_init_data(options.order_id)
   },
   //获取订单信息
@@ -63,8 +66,26 @@ Page({
       })
     } else if (this.data.info.order_status == 3){
       //付款
+        config.ajax('POST', {
+          token: wx.getStorageSync('user_token'),
+          order_id: this.data.info.order_id
+        }, '/order/pay_order', res => {
+          config.mytoast('支付成功!', res => {
+            setTimeout(() => {
+              this.get_init_data(this.data.id)
+            }, 1000)
+          })
+        })
+    
     }else{
       //去评价
+        wx.navigateTo({
+          url: '/pages/evaluate/evaluate?order_id=' + this.data.info.order_id,
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      
     }
     // wx.showModal({
     //   title: '提示',

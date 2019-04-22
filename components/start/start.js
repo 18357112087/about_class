@@ -36,8 +36,11 @@ Component({
         this.setData({
           score: e.currentTarget.dataset.index
         })
+        const eventDetail = {
+          score: this.data.score,
+        }
+        this.triggerEvent('tabStart', eventDetail)
+        }
       }
-      
-    },
   }
 })

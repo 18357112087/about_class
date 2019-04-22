@@ -26,9 +26,11 @@
     <view class='scope_group'>
       <view class='scope_normel_button' catchtap='to_bargain' wx:if="{{item.order_status==3}}">找人砍价</view>
       <view class='scope_normel_button' catchtap='cendel_ordel' wx:if="{{item.order_status<4}}">取消订单</view>  
-      <!-- <view class='scope_normel_button button_active'>立即付款</view> -->
-      <view class='scope_normel_button button_active' wx:if="{{item.order_status==5}}" catchtap='to_ecent'>去评价</view>
+      <view class='scope_normel_button button_active' wx:if="{{item.order_status==3}}" catchtap='pay' data-order_id='{{item.order_id}}'>立即付款</view>
+      <view class='scope_normel_button button_active' wx:if="{{item.order_status==5}}" catchtap='to_evaluate' data-order_id='{{item.order_id}}'>去评价</view>
        <view class='scope_normel_button button_active' wx:if="{{item.order_status==1}}" catchtap='to_select' data-order_id='{{item.order_id}}'>立即匹配</view>
     </view>
   </view>
+  <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
 </view>
+

@@ -3,7 +3,7 @@
   <textarea class='textWrap' placeholder='输入您的点评内容' bindinput='getContent'></textarea>
   <view class='start_group'>
     <text class='mintitle'>选择评分</text>
-    <start score="{{score}}" only-read="{{read}}"></start>
+    <start  only-read="{{read}}" bindtabStart='getScore'></start>
   </view>
   <view class='button' bindtap='sure_ordel'>提交反馈</view>
 </view>

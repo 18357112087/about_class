@@ -15,7 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      order_id: options.order_id
+    })
   },
   //评星
   tabStart(e) {
@@ -37,11 +39,16 @@ Page({
     }
     config.ajax('POST', {
       token: wx.getStorageSync('user_token'), //token 
-      order_id: '',
-      score: '',
-      content: ''
+      order_id: this.data.order_id,
+      score: this.data.score,
+      content: this.data.content
     }, '/order/order_estimate', res => {
       config.mytoast('评价成功')
+    })
+  },
+  getScore(e){
+    this.setData({
+      score: e.detail.score
     })
   },
   /**

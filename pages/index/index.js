@@ -41,7 +41,10 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
-
+    this.getAdver()
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
   },
   //年级列表
   getGrade_lsit() {
@@ -91,9 +94,10 @@ Page({
               grade_id: that.data.grade_list[that.data.grade_index].grade_id, //年级id
               teacher_grade_id: that.data.level_list[that.data.level_index].teacher_grade_id, //级别id
               reservetime: that.data.date + " " + that.data.start_time, //开始时间
-              name: address,
+              address: address,
               latitude: res.latitude,
               longitude: res.longitude,
+              duration: that.data.time_list[that.data.time_index]
               // reservetime: that.data.date + " " + that.data.start_time,     //结束时间
               //少一个标签选择
             }, '/order/place_order', res => {
@@ -109,6 +113,9 @@ Page({
       },
       fail: function (err) {
         config.mytoast('下单失败!您未确认地址!')
+      },
+      complete:function(com){
+        console.log(com)
       }
     });
   },

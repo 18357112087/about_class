@@ -1,18 +1,25 @@
-// pages/my/about_us/about_us.js
+// pages/xy/xy.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) {  
+    config.ajax('POST',{
 
+    },'/index/agreement',res=>{
+      this.setData({
+        info:res.data.data.url
+      })
+    })
   },
 
   /**
@@ -35,14 +42,7 @@ Page({
   onHide: function () {
 
   },
-  go_xy(){
-    wx.navigateTo({
-      url: '/pages/xy/xy',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
+
   /**
    * 生命周期函数--监听页面卸载
    */

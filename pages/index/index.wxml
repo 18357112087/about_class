@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='headGroup'>
   <view class='personlInfo'>
-    <image src="{{userInfo.user_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.user_portrait:default_src}}" class='portrait'>
+    <image src="{{userInfo.user_portrait?userInfo.user_portrait:default_src}}" class='portrait'>
     </image>
     <text class='name'>{{userInfo.user_nickname?userInfo.user_nickname:'暂未登陆'}}</text>
     <!-- <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image> -->
@@ -60,18 +60,18 @@
         <text class='iconfont icon-arr-right-red'></text>
       </view>
     </picker>
-    <view class='list'>
+    <!-- <view class='list'>
       <text class='iconfont icon-biaoqian'></text>
       <text class='list_title'>标签</text>
       <view class='list_Centent w450'>
         <text class="minTab {{min_index==index?'minTabActive':''}}" wx:for="{{minTab_list}}" bindtap='select_tab' data-index='{{index}}'>{{item}}</text>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class='sumbit' bindtap='sure'>一键下单</view>
   <view class='broadcast'>
     <text class='iconfont icon-guangbo'></text>
-    <view class='broadWrap'>交易大厅迎来重大升级！欢迎体验</view>
+    <view class='broadWrap'>{{adver}}</view>
   </view>
 
 </view>
