@@ -21,7 +21,8 @@ Page({
   select_tab(e) {
     this.setData({
       tabindex: e.currentTarget.dataset.index,
-      page:1
+      page:1,
+      list:[]
     })
     if (this.data.tabindex==0){
       this.gitdata()
@@ -44,6 +45,10 @@ Page({
     }, '/order/pay_order', res => {
       config.mytoast('支付成功!',res=>{
         setTimeout(()=>{
+          this.setData({
+            page:1,
+            list:[]
+          })
           this.gitdata()
         },1000)
       })
@@ -106,10 +111,16 @@ Page({
     })
   },
   //找人砍价
-  to_bargain() {
+  to_bargain(e) {
+    // wx.navigateTo({
+    //   url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
+    //   success: function (res) { },
+    //   fail: function (res) { },
+    //   complete: function (res) { },
+    // })
     wx.showModal({
       title: '提示',
-      content: '这是转发给好友，点击确定查看砍价页演示',
+      content: '点击确定查看砍价页演示',
       showCancel: true,
       cancelText: '取消',
       cancelColor: '',
@@ -118,7 +129,7 @@ Page({
       success: function (res) {
         if (res.confirm) {
           wx.navigateTo({
-            url: '/pages/ordel/bargain/bargain',
+            url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
             success: function (res) { },
             fail: function (res) { },
             complete: function (res) { },

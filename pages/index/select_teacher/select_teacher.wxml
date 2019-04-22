@@ -29,11 +29,11 @@
 
     <view class="item w300 tfl" wx:if="{{index==2}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w224">
-        <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
+        <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
-        <text class='name_features'>{{item.teacher_age}}</text>
+        <text class='name_features'>{{item.teacher_age}}岁</text>
       </view>
       <view class='start_group'>
         <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -41,11 +41,11 @@
     </view>
     <view class="item w300 tfr" wx:if="{{index==1}}"  wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w176">
-       <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
+       <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
-        <text class='name_features'>{{item.teacher_age}}</text>
+        <text class='name_features'>{{item.teacher_age}}岁</text>
       </view>
       <view class='start_group'>
          <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -53,7 +53,7 @@
     </view>
     <view class="item centent"  wx:if="{{index==0}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap">
-       <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
+       <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
@@ -65,11 +65,11 @@
     </view>
     <view class="item w300 bfl" wx:if="{{index==3}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w128">
-       <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
+       <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
-        <text class='name_features'>{{item.teacher_age}}</text>
+        <text class='name_features'>{{item.teacher_age}}岁</text>
       </view>
       <view class='start_group'>
        <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>
@@ -77,11 +77,11 @@
     </view>
     <view class="item w300 bfr" wx:if="{{index==4}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='to_teacherRes' data-id='{{item.teacher_id}}' data-index='{{index}}'>
       <view class="item_wrap w256">
-       <image src='http://yueke.dazhu-ltd.cn/public/uploads{{item.teacher_portrait}}'></image>
+       <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{item.teacher_portrait}}'></image>
       </view>
       <view class='name_group'>
         <text class='name'>{{item.teacher_realname}}</text>
-        <text class='name_features'>{{item.teacher_age}}</text>
+        <text class='name_features'>{{item.teacher_age}}岁</text>
       </view>
       <view class='start_group'>
         <start score="{{item.teacher_sex-1}}" only-read="{{read}}" font-size="16rpx"></start>

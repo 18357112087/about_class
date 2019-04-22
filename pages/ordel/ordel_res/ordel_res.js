@@ -99,9 +99,9 @@ Page({
     //   complete: function (res) { },
     // })
   },
-  to_teacher_res(){
+  to_teacher_res(e){
     wx.navigateTo({
-      url: '/pages/index/teacher_index/teacher_index',
+      url: '/pages/index/teacher_index/teacher_index?id=' + this.data.info.teacher_id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

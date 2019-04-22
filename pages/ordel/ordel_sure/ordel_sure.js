@@ -120,7 +120,7 @@ Page({
       subjoin:JSON.stringify(a)     //其它金额
     },'/order/affirm_teacher',res=>{
       wx.navigateTo({
-        url: '/pages/ordel/sure_ordel/ordel_sure',
+        url: '/pages/ordel/sure_ordel/ordel_sure?id=' + this.data.order_id,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },

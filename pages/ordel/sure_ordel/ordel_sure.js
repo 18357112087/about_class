@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      order_id:options.id
+    })
   },
 
   /**
@@ -22,23 +24,23 @@ Page({
 
   },
   to_bargain(){
-    wx.showModal({
-      title: '提示',
-      content:'这是转发给好友',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-    // wx.navigateTo({
-    //   url: '/pages/ordel/bargain/bargain',
+    // wx.showModal({
+    //   title: '提示',
+    //   content:'这是转发给好友',
     //   success: function(res) {},
     //   fail: function(res) {},
     //   complete: function(res) {},
     // })
+    wx.navigateTo({
+      url: '/pages/ordel/bargain/bargain?order_id='+this.data.order_id,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   look_res(){
     wx.navigateTo({
-      url: '/pages/ordel/ordel_res/ordel_res',
+      url: '/pages/ordel/ordel_res/ordel_res?order_id='+this.data.order_id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
