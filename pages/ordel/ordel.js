@@ -67,6 +67,8 @@ Page({
           item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
+      } else {
+        config.mytoast('暂无更多数据')
       }
       this.setData({
         page:this.data.page+1,
@@ -95,6 +97,8 @@ Page({
           item.order_createtime = config.timeForm(item.order_createtime).btTime
           return item
         })
+      } else {
+        config.mytoast('暂无更多数据')
       }
       this.setData({
         page: this.data.page + 1,
