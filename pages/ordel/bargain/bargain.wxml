@@ -1,84 +1,39 @@
 <view class="head">
   <view class='head_wrap'>
     <view class='head_top '>
-      <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+      <image class='top_val' src="{{info.user_portrait!=''?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.user_portrait:default_src}}"></image>
       <view class='top_res'>
         <view class='top_res_title'>
-          <text class='top_res_name'>朱萧木</text>
-          <text class='top_res_label'>卓越</text>
-          <text class='top_res_label'>卓越</text>
+          <text class='top_res_name'>{{info.user_nickname}}</text>
+          <!-- <text class='top_res_label'>卓越</text>
+          <text class='top_res_label'>卓越</text> -->
         </view>
-        <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+        <!-- <view class='top_res_detail'>天津工业大学 · 环境监测</view> -->
       </view>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
     <view class='head_bottom'>
       <text class='bottom_title'>已优惠</text>
-      <text class='bottom_price'>12.00</text>
+      <text class='bottom_price'>{{info.order_bargain_money}}</text>
     </view>
   </view>
 </view>
 <view class='content'>
   <view class='button_return' bindtap='show_mask'>帮TA砍价</view>
-  <view class='button_group'>我也要砍价</view>
+  <view class='button_group' bindtap='re_index'>我也要砍价</view>
   <view class='content_wrap'>
     <view class='wrap_title'>好友砍价榜</view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
+    <view class='wrap_list' wx:for="{{info.OrderBargain_list}}" wx:for-index="index" wx:for-item="item">
+      <image class='list_val' src="{{item.user_portrait!=''?'http://yueke.dazhu-ltd.cn/public/uploads/'+item.user_portrait:default_src}}"></image>
+      <text class='list_name'>{{item.user_nickname}}</text>
+      <text class='list_price'>{{item.order_bargain_money}}</text>
     </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-    <view class='wrap_list'>
-      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
-      <text class='list_name'>朱萧木</text>
-      <text class='list_price'>1.00</text>
-    </view>
-
+    <view class='nodata' wx:if="{{info.OrderBargain_list.length==0}}">暂无任何砍价~</view>
   </view>
 </view>
-<view class='bottom'>
+<!-- <view class='bottom'>
   <view class='button_group margin0' bindtap='look_res'>查看订单</view>
-</view>
+</view> -->
 
 <view class='mask' wx:if="{{mask}}" bindtap='hide_mask'>
   <!-- <view class='mask_content'>

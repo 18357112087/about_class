@@ -5,7 +5,7 @@
         <text class='res_name'>{{teacher_info.teacher_realname}}</text>
         <!-- <image class='res_rz' src='http://class.zzvlm.com/1969@2x.png'></image> -->
       </view>
-      <text class='info_mintitle'>天津工业大学 · 环境监测</text>
+      <text class='info_mintitle'>{{teacher_info.teacher_academy}} · {{teacher_info.teacher_major}}</text>
     </view>
     <image class='info_val' src='http://yueke.dazhu-ltd.cn/public/uploads/{{teacher_info.teacher_portrait}}'></image>
   </view>
@@ -24,7 +24,7 @@
     <view class='class_title'>
       <image class='class_logo' src='http://class.zzvlm.com/1223552@2x.png'></image>
       <text class='class_title_name'>用户评价({{teacher_eveList.length}})</text>
-      <text class='class_mintitle'>{{teacher_info.teacher_estimate}}好评</text>
+      <text class='class_mintitle'>{{teacher_info.teacher_estimate}}%好评</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
     <view class='evaluate_list' wx:for="{{teacher_eveList}}" wx:key="{{index}}" wx:for-item="item">

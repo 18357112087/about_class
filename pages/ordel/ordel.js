@@ -116,33 +116,33 @@ Page({
   },
   //找人砍价
   to_bargain(e) {
-    // wx.navigateTo({
-    //   url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
-    //   success: function (res) { },
-    //   fail: function (res) { },
-    //   complete: function (res) { },
-    // })
-    wx.showModal({
-      title: '提示',
-      content: '点击确定查看砍价页演示',
-      showCancel: true,
-      cancelText: '取消',
-      cancelColor: '',
-      confirmText: '砍价演示',
-      confirmColor: 'rgba(96, 234, 243, 1)',
-      success: function (res) {
-        if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
-        }
-      },
+    wx.navigateTo({
+      url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.order_id,
+      success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
     })
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '点击确定查看砍价页演示',
+    //   showCancel: true,
+    //   cancelText: '取消',
+    //   cancelColor: '',
+    //   confirmText: '砍价演示',
+    //   confirmColor: 'rgba(96, 234, 243, 1)',
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       wx.navigateTo({
+    //         url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
+    //         success: function (res) { },
+    //         fail: function (res) { },
+    //         complete: function (res) { },
+    //       })
+    //     }
+    //   },
+    //   fail: function (res) { },
+    //   complete: function (res) { },
+    // })
   },
   //取消订单
   cendel_ordel(){

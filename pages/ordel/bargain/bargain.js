@@ -1,4 +1,5 @@
 // pages/ordel/bargain/bargain.js
+const config=require('../../../utils/util.js')
 const ctx = wx.createCanvasContext('myCanvas');
 Page({
 
@@ -6,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
     mask: false,
     imglist: ['http://class.zzvlm.com/2017041969914926076563635@2x.png', 'http://class.zzvlm.com/37861@2x.png', 'http://img.zcool.cn/community/019b7e5bbe34c9a801213dea292f6e.png@2o.png', 'http://class.zzvlm.com/123551@2x.png', 'https://fapiao.gaodun.com/Public/cma/x_bg.png'],
     name: '仇益阳',
@@ -30,7 +32,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.git_init(options.order_id)
+  },
+  git_init(id){
+    config.ajax('POST',{
+      token:wx.getStorageSync('user_token'),
+      order_id:id
+    },'/order/bargain_list',res=>{
+      this.setData({
+        info:res.data.data,
+        name: res.data.data.user_nickname,
+        'imglist[2]': res.data.data.user_portrait == '' ? 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png' : 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.user_portrait
+      })
+    })
   },
   show_mask() {
     wx.showLoading({
@@ -113,23 +127,31 @@ Page({
     ctx.setFontSize(that.rem(34))
     ctx.setTextAlign('left')
     ctx.setFillStyle('#2C2C2C')
-    ctx.fillText(that.data.name, that.rem(146), that.rem(480 + 54+42))
+    ctx.fillText(that.data.name, that.rem(146), that.rem(480 + 54+55))
     //绘制用户标签
-    ctx.setFillStyle('#60EAF3')
-    ctx.fillRect(that.rem(160) + ctx.measureText(that.data.name).width, that.rem(480 + 54 + 42 - 30), that.rem(128), that.rem(40))
-    ctx.setFontSize(that.rem(24))
-    ctx.setTextAlign('left')
-    ctx.setFillStyle('#FFFFFF')
-    ctx.fillText(that.data.tip, that.rem(160 + 45) + ctx.measureText(that.data.name).width, that.rem(480 + 54 + 42), that.rem(128))
+    // ctx.setFillStyle('#60EAF3')
+    // ctx.fillRect(that.rem(160) + ctx.measureText(that.data.name).width, that.rem(480 + 54 + 42 - 30), that.rem(128), that.rem(40))
+    // ctx.setFontSize(that.rem(24))
+    // ctx.setTextAlign('left')
+    // ctx.setFillStyle('#FFFFFF')
+    // ctx.fillText(that.data.tip, that.rem(160 + 45) + ctx.measureText(that.data.name).width, that.rem(480 + 54 + 42), that.rem(128))
     //绘制学院信息
-    ctx.setFontSize(that.rem(22))
-    ctx.setTextAlign('left')
-    ctx.setFillStyle('#999999')
-    ctx.fillText(that.data.school + ' · ' + that.data._class, that.rem(146), that.rem(480 + 54 + 42+40))
+    // ctx.setFontSize(that.rem(22))
+    // ctx.setTextAlign('left')
+    // ctx.setFillStyle('#999999')
+    // ctx.fillText(that.data.school + ' · ' + that.data._class, that.rem(146), that.rem(480 + 54 + 42+40))
     ctx.draw(true)
     wx.hideLoading()
     that.setData({
       mask: true
+    })
+  },
+  re_index(){
+    wx.switchTab({
+      url: '/pages/index/index',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   save() {

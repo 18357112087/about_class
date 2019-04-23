@@ -5,10 +5,10 @@
     <view class='top_res'>
       <view class='top_res_title'>
         <text class='top_res_name'>{{item.teacher_realname}}</text>
-        <text class='top_res_label'>卓越</text>
-        <text class='top_res_label'>卓越</text>
+        <!-- <text class='top_res_label'>卓越</text>
+        <text class='top_res_label'>卓越</text> -->
       </view>
-      <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+      <view class='top_res_detail'>{{item.teacher_academy}} · {{item.teacher_major}}</view>
     </view>
   </view>
   <view class='nodata' wx-if="{{teacher.length==0}}">暂无数据~</view>
