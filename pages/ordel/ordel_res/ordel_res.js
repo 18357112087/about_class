@@ -43,16 +43,13 @@ Page({
   },
   //取消订单
   cendel_ordel(){
-    wx.showModal({
-      title: '提示',
-      content: '确认取消订单？',
-      success: function(res) {
-        if(res.confirm){
-          config.mytoast('订单已取消')
-        }
-      },
-      fail: function(res) {},
-      complete: function(res) {},
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id: this.data.id
+    }, '/order/order_cancel', res => {
+      this.get_init_data(this.data.id)
+      config.mytoast('订单已取消!')
+      
     })
   },
   //付款

@@ -2,9 +2,6 @@
 const config = require('./utils/util.js')
 App({
   config: config,
-  onLaunch: function () {
-    console.log(wx.getStorageSync('user_token'))
-  },
   globalData: {
     user_token: wx.getStorageSync('user_token') || '',
     userInfo: wx.getStorageSync('userInfo') || null,
@@ -14,6 +11,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
+    console.log(wx.getStorageSync('user_token'))
     wx.login({
       success: (res) => {
         if (res.code) {

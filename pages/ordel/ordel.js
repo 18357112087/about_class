@@ -43,15 +43,12 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id:e.currentTarget.dataset.order_id
     }, '/order/pay_order', res => {
-      config.mytoast('支付成功!',res=>{
-        setTimeout(()=>{
-          this.setData({
-            page:1,
-            list:[]
-          })
-          this.gitdata()
-        },1000)
+      this.setData({
+        page: 1,
+        list: []
       })
+      this.gitdata()
+      config.mytoast('支付成功!')
     })
   },
   gitSuccess(){
@@ -122,41 +119,19 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '点击确定查看砍价页演示',
-    //   showCancel: true,
-    //   cancelText: '取消',
-    //   cancelColor: '',
-    //   confirmText: '砍价演示',
-    //   confirmColor: 'rgba(96, 234, 243, 1)',
-    //   success: function (res) {
-    //     if (res.confirm) {
-    //       wx.navigateTo({
-    //         url: '/pages/ordel/bargain/bargain?order_id=' + e.currentTarget.dataset.id,
-    //         success: function (res) { },
-    //         fail: function (res) { },
-    //         complete: function (res) { },
-    //       })
-    //     }
-    //   },
-    //   fail: function (res) { },
-    //   complete: function (res) { },
-    // })
   },
   //取消订单
-  cendel_ordel(){
-    wx.showModal({
-      title: '提示',
-      content: '确定取消订单？',
-      showCancel: true,
-      success: function (res) {
-        if (res.confirm) {
-          config.mytoast('取消订单成功!')
-        }
-      },
-      fail: function (res) { },
-      complete: function (res) { },
+  cendel_ordel(e){
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id: e.currentTarget.dataset.order_id
+    }, '/order/order_cancel', res => {
+      this.setData({
+        page: 1,
+        list: []
+      })
+      this.gitdata()
+      config.mytoast('订单已取消!')
     })
   },
   /**

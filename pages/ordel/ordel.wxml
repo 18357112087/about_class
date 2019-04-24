@@ -33,7 +33,7 @@
       <view class='scope_normel_button' catchtap='to_bargain' wx:if="{{item.order_status==3}}" data-order_id='{{item.order_id}}'>
         找人砍价
       </view>
-      <view class='scope_normel_button' catchtap='cendel_ordel' wx:if="{{item.order_status<4}}">
+      <view class='scope_normel_button' catchtap='cendel_ordel' wx:if="{{item.order_status<3}}" data-order_id='{{item.order_id}}'>
         取消订单
       </view>
       <view class='scope_normel_button button_active' wx:if="{{item.order_status==3}}" catchtap='pay' data-order_id='{{item.order_id}}'>
