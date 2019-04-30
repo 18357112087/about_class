@@ -75,11 +75,11 @@ function timeForm(time) {
 //支付函数
 function pay(res, successData) {
   wx.requestPayment({
-    "timeStamp": res.data.data.timeStamp,
-    "nonceStr": res.data.data.nonceStr,
-    "package": res.data.data.package,
+    "timeStamp": res.timeStamp,
+    "nonceStr": res.nonceStr,
+    "package": res.package,
     "signType": "MD5",
-    "paySign": res.data.data.paySign,
+    "paySign": res.paySign,
     "success": function (res) {
       wx.showToast({
         title: '支付完成',

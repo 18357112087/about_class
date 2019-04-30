@@ -30,6 +30,7 @@ Page({
       data.endTime = config.timeForm(data.order_reservetime + data.order_duration * 3600).chatTime.hour + ':' + config.timeForm(data.order_reservetime + data.order_duration * 3600).chatTime.minute
       data.order_reservetime = config.timeForm(data.order_reservetime).chatTime
       data.order_createtime = config.timeForm(data.order_createtime).btTime
+      data.allmoney = (parseFloat(data.order_money) + parseFloat(data.order_subjoin_money) - parseFloat(data.order_bargain_money)).toFixed(2)
       this.setData({
         info: data
       })
@@ -67,11 +68,14 @@ Page({
           token: wx.getStorageSync('user_token'),
           order_id: this.data.info.order_id
         }, '/order/pay_order', res => {
-          config.mytoast('支付成功!', res => {
-            setTimeout(() => {
-              this.get_init_data(this.data.id)
-            }, 1000)
+          config.pay(JSON.parse(res.data.data), res => {
+            this.get_init_data(this.data.id)
           })
+          // config.mytoast('支付成功!', res => {
+          //   setTimeout(() => {
+          //     this.get_init_data(this.data.id)
+          //   }, 1000)
+          // })
         })
     
     }else{

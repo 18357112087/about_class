@@ -5,7 +5,8 @@ App({
   globalData: {
     user_token: wx.getStorageSync('user_token') || '',
     userInfo: wx.getStorageSync('userInfo') || null,
-    wx_code: null
+    wx_code: null,
+    wx_openid: wx.getStorageSync('user_openid') || null
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）

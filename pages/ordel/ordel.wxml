@@ -9,7 +9,7 @@
       <image class='head_portrait' src="{{item.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+item.teacher_portrait:'http://yueke.dazhu-ltd.cn/public/uploads/20190413/0e64f0cd953a240dafcad89cba5eccd0.jpg'}}"></image>
       <text class='head_name'>{{item.teacher_realname?item.teacher_realname:'暂未匹配'}}</text>
       <text class='head_time'>{{item.order_createtime}}</text>
-      <text class='head_ordel_money'>订单金额:￥{{item.order_money}}</text>
+      <text class='head_ordel_money'>订单金额:￥{{item.allmoney}}</text>
     </view>
     <view class='classInfo borT'>
       <view class='class_group'>

@@ -43,12 +43,15 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id:e.currentTarget.dataset.order_id
     }, '/order/pay_order', res => {
-      this.setData({
-        page: 1,
-        list: []
+      config.pay(JSON.parse(res.data.data),res=>{
+        this.setData({
+          page: 1,
+          list: []
+        })
+        this.gitdata()
       })
-      this.gitdata()
-      config.mytoast('支付成功!')
+     
+      // config.mytoast('支付成功!')
     })
   },
   gitSuccess(){
@@ -62,6 +65,7 @@ Page({
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.allmoney = (parseFloat(item.order_money) + parseFloat(item.order_subjoin_money) - parseFloat(item.order_bargain_money)).toFixed(2)
           return item
         })
       } else {
@@ -92,6 +96,7 @@ Page({
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.allmoney = (parseFloat(item.order_money) + parseFloat(item.order_subjoin_money)- parseFloat(item.order_bargain_money)).toFixed(2)
           return item
         })
       } else {

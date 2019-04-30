@@ -44,7 +44,7 @@
   </view>
   <view class='price_group borT'>
     <text class='price_title'>实际付款</text>
-    <text class='price_mintitle'>￥{{info.order_money}}</text>
+    <text class='price_mintitle'>￥{{info.allmoney}}</text>
   </view>
   <view class='tip_group'>
     <text class='tip'>订单编号：{{info.order_number}}</text>
