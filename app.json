@@ -1,23 +1,18 @@
 {
   "pages": [
-   
     "pages/index/index",
     "pages/evaluate/evaluate",
     "pages/xy/xy",
-    
     "pages/ordel/bargain/bargain",
     "pages/login/login",
     "pages/my/my",
     "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/teacher_index/teacher_index",
-    
     "pages/income_details/income_details",
     "pages/income/income",
     "pages/wallet/wallet",
-    
     "pages/my/my_adder/my_adder",
     "pages/teacher/teacher",
-    
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
     "pages/bind_phone/bind_phone",
@@ -34,9 +29,9 @@
     "navigationBarTitleText": "约课",
     "navigationBarTextStyle": "white"
   },
-  "permission":{
-    "scope.userLocation":{
-      "desc":"用于用户搜索地址选择地点"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于用户搜索地址选择地点"
     }
   },
   "tabBar": {
@@ -61,5 +56,6 @@
         "selectedIconPath": "status/3748@2x.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

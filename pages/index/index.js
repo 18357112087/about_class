@@ -30,6 +30,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.inviter_id){
+      wx.setStorageSync('inviter_id',options.inviter_id)
+    }
     let year = new Date().getFullYear();
     let mouth = new Date().getMonth() + 1;
     mouth = mouth > 10 ? mouth : '0' + mouth

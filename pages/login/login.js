@@ -111,7 +111,8 @@ Page({
       portrait: this.data.info.avatarUrl||'',
       nickname: this.data.info.nickName || '',
       sex: this.data.info.gender || 1,
-      wx_code: app.globalData.wx_code
+      wx_code: app.globalData.wx_code,
+      inviter_id: wx.getStorageSync('inviter_id')||''
     }, '/login/user_login', res => {
       wx.setStorageSync('user_token', res.data.data.user_token)
       wx.setStorageSync('user_openid', res.data.data.user_openid)

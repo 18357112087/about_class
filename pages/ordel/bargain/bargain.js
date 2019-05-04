@@ -32,7 +32,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      order_id: options.order_id
+    })
     this.git_init(options.order_id)
   },
   git_init(id){
@@ -51,7 +53,17 @@ Page({
     wx.showLoading({
       title: '正在生成图片',
     })
-    this.downImg(this.data.imglist)
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id: this.data.order_id
+    }, '/user/user_qrcode', res => {
+      console.log('http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data)
+      // this.setData({
+      //   'imglist[0]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
+      // })
+      this.downImg(this.data.imglist)
+    })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
