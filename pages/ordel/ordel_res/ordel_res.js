@@ -78,7 +78,7 @@ Page({
           // })
         })
     
-    }else{
+    } else if (this.data.info.order_status == 5){
       //去评价
         wx.navigateTo({
           url: '/pages/evaluate/evaluate?order_id=' + this.data.info.order_id,

@@ -44,6 +44,9 @@ Page({
       content: this.data.content
     }, '/order/order_estimate', res => {
       config.mytoast('评价成功')
+      wx.switchTab({
+        url: 'pages/ordel/ordel',
+      })
     })
   },
   getScore(e){

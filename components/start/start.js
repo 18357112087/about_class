@@ -14,7 +14,7 @@ Component({
     },
     fontSize:{
       type:String,
-      value:'20rpx'
+      value:'30rpx'
     }
   },
 

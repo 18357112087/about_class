@@ -55,5 +55,5 @@
 
 <view class='bottom_group'>
   <view class='cendel' bindtap='cendel_ordel' wx:if="{{info.order_status<=3}}">取消订单</view>
-  <view class='payed' bindtap='pay_ordel'>{{info.order_status==1?'去匹配':info.order_status==2?'待教师接单':info.order_status==3?'去付款':info.order_status==4?'等待教师授课':info.order_status==4?'去评价':info.order_status==10?'订单已取消':'完成'}}</view>
+  <view class='payed' bindtap='pay_ordel'>{{info.order_status==1?'去匹配':info.order_status==2?'待教师接单':info.order_status==3?'去付款':info.order_status==4?'等待教师授课':info.order_status==5?'去评价':info.order_status==10?'订单已取消':'完成'}}</view>
 </view>

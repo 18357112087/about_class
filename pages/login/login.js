@@ -23,6 +23,12 @@ Page({
       token: wx.getStorageSync('user_token')
     }, '/user/user_info', res => {
       wx.setStorageSync('userInfo', res.data.data)
+      wx.switchTab({
+        url: '/pages/index/index',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
     })
   },
   //获取用户信息
@@ -117,12 +123,7 @@ Page({
       wx.setStorageSync('user_token', res.data.data.user_token)
       wx.setStorageSync('user_openid', res.data.data.user_openid)
       this.get_userInfo()
-      wx.switchTab({
-        url: '/pages/index/index',
-        success: function (res) { },
-        fail: function (res) { },
-        complete: function (res) { },
-      })
+      
     })
   },
   /**

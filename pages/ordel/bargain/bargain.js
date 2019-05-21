@@ -50,20 +50,28 @@ Page({
     })
   },
   show_mask() {
-    wx.showLoading({
-      title: '正在生成图片',
-    })
     config.ajax('POST', {
       token: wx.getStorageSync('user_token'),
       order_id: this.data.order_id
-    }, '/user/user_qrcode', res => {
-      console.log('http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data)
-      // this.setData({
-      //   'imglist[0]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
-      // })
-      this.downImg(this.data.imglist)
-    })
-    
+    }, '/order/order_bargain', res => {
+      this.git_init(this.data.order_id)
+      config.mytoast('砍价成功,即将生成砍价小程序码',(res)=>{
+        wx.showLoading({
+          title: '正在生成图片',
+        })
+        config.ajax('POST', {
+          token: wx.getStorageSync('user_token'),
+          order_id: this.data.order_id
+        }, '/user/user_qrcode', res => {
+          console.log('http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data)
+          // this.setData({
+          //   'imglist[0]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
+          // })
+          this.downImg(this.data.imglist)
+        })
+      })
+
+    })    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

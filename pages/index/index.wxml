@@ -71,7 +71,7 @@
   <view class='sumbit' bindtap='sure'>一键下单</view>
   <view class='broadcast'>
     <text class='iconfont icon-guangbo'></text>
-    <view class='broadWrap'>{{adver}}</view>
+    <view class='broadWrap' bindtap='txy'>使用协议</view>
   </view>
 
 </view>

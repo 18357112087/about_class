@@ -185,7 +185,7 @@ page {
 }
 
 .list_item .hart {
-  color: RGBA(255, 65, 109, 1);
+  color: rgba(96, 234, 243, 1);
 }
 
 .call_group {

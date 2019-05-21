@@ -37,16 +37,22 @@ Page({
     let mouth = new Date().getMonth() + 1;
     mouth = mouth > 10 ? mouth : '0' + mouth
     let day = new Date().getDate();
-    day = day > 10 ? day : '0' + day
+    day = day > 9 ? day : '0' + day
     this.setData({
+      start_time: new Date().getHours() + ':' + new Date().getMinutes(),
       date: year + '-' + mouth + '-' + day
     })
     qqmapsdk = new QQMapWX({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
     this.getAdver()
-    this.setData({
-      userInfo: wx.getStorageSync('userInfo')
+  },
+  txy(){
+    wx.navigateTo({
+      url: '/pages/xy/xy',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   //年级列表

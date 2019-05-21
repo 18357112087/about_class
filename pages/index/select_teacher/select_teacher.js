@@ -26,9 +26,18 @@ Page({
       order_id: order_id  //订单id
     }, '/order/select_teacher', res => {
       setTimeout(() => {
-        this.setData({
-          list: res.data.data
-        })
+        if (res.data.data.length==0){
+          config.mytoast('暂未匹配到老师',(res)=>{
+            wx.navigateBack({
+              delta: 1,
+            })
+          })
+        }else{
+          this.setData({
+            list: res.data.data
+          })
+        }
+       
       }, 3000)
     })
   },

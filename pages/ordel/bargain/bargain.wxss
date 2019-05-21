@@ -236,6 +236,8 @@
 .list_val {
   width: 58rpx;
   height: 58rpx;
+  border-radius:50%;
+  overflow: hidden; 
 }
 
 .list_name {
