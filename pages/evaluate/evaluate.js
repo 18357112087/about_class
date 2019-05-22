@@ -45,7 +45,7 @@ Page({
     }, '/order/order_estimate', res => {
       config.mytoast('评价成功')
       wx.switchTab({
-        url: 'pages/ordel/ordel',
+        url: '/pages/ordel/ordel',
       })
     })
   },

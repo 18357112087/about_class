@@ -68,10 +68,10 @@ Page({
       }, '/user/upload_img', succes => {
         var userInfo = this.data.userInfo
         userInfo.user_portrait = succes.data.path
+        console.log()
         this.setData({
           userInfo: userInfo,
-          sex_index: res.data.data.user_sex - 1,
-          age_index: res.data.data.user_age
+          sex_index: userInfo.user_sex - 1,
         })
       }, error => {
         console.log(error)
