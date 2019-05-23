@@ -218,7 +218,7 @@ page {
 .broadWrap {
   width: 540rpx;
   height: 100%;
-  font-size: 24rpx;
+  font-size: 30rpx;
   color: rgba(96, 234, 243, 1);
   display: -webkit-box;
   display: -ms-flexbox;

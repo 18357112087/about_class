@@ -1,0 +1,37 @@
+<view class="banner">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
+    <block wx:for="{{bannerlist}}" wx:for-item="item" wx:for-index="index">
+      <swiper-item class="swiper_item">
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='tab_wrap'>
+  <view class='tab_item'>
+    <text class='iconfont icon-xuesheng'></text>
+    <text class='tab_title'>找老师</text>
+  </view>
+  <view class='tab_item' bindtap='to_index'>
+    <text class='iconfont icon-jiaolian1'></text>
+    <text class='tab_title'>找老师</text>
+  </view>
+</view>
+
+<view class='content_wrap'>
+  <view class='content_title'>
+    ·教育资料·
+  </view>
+  <view class='content_list' wx:for="{{zllist}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='look_res' data-id='{{item.notice_id}}'>
+    <image class='content_img' src='{{item.notice_surface}}'></image>
+    <view class='content_res'>
+      <view class='content_title'>
+        {{item.notice_title}}
+      </view>
+      <view class='content_date'>{{item.notice_createtime}}</view>
+    </view>
+  </view>
+  <view class='nodata' wx:if="{{zllist.length==0}}">
+    暂无数据~
+  </view>
+</view>

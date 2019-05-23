@@ -6,7 +6,7 @@
 <view class='content'>
   <view class='list' bindtap='to_res' data-id='{{item.order_id}}' wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index">
     <view class='list_head borT'>
-      <image class='head_portrait' src="{{item.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+item.teacher_portrait:'http://yueke.dazhu-ltd.cn/public/uploads/20190413/0e64f0cd953a240dafcad89cba5eccd0.jpg'}}"></image>
+      <image class='head_portrait' src="{{item.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+item.teacher_portrait:default_src}}"></image>
       <text class='head_name'>{{item.teacher_realname?item.teacher_realname:'暂未匹配'}}</text>
       <text class='head_time'>{{item.order_createtime}}</text>
       <text class='head_ordel_money'>订单金额:￥{{item.allmoney}}</text>
