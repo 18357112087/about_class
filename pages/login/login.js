@@ -110,20 +110,30 @@ Page({
       config.mytoast('请输入短信验证码!')
       return false
     }
-    console.log(this.data.info)
-    config.ajax('POST', {
-      phone: this.data.user_phone,
-      code: this.data.user_password,
-      portrait: this.data.info.avatarUrl||'',
-      nickname: this.data.info.nickName || '',
-      sex: this.data.info.gender || 1,
-      wx_code: app.globalData.wx_code,
-      inviter_id: wx.getStorageSync('inviter_id')||''
-    }, '/login/user_login', res => {
-      wx.setStorageSync('user_token', res.data.data.user_token)
-      wx.setStorageSync('user_openid', res.data.data.user_openid)
-      this.get_userInfo()
-      
+    wx.login({
+      success: (res) => {
+        if (res.code) {
+          console.log(res.code)
+          config.ajax('POST', {
+            phone: this.data.user_phone,
+            code: this.data.user_password,
+            portrait: this.data.info.avatarUrl || '',
+            nickname: this.data.info.nickName || '',
+            sex: this.data.info.gender || 1,
+            wx_code: res.code,
+            inviter_id: wx.getStorageSync('inviter_id') || ''
+          }, '/login/user_login', res => {
+            wx.setStorageSync('user_token', res.data.data.user_token)
+            wx.setStorageSync('user_openid', res.data.data.user_openid)
+            this.get_userInfo()
+
+          })
+          app.globalData.wx_code = res.code
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+
+      }
     })
   },
   /**
