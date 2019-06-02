@@ -17,13 +17,13 @@
     <text class='mintitle'>{{sex_list[sex_index].label}}</text>
   </view>
   </picker>
-  <picker mode="date"
+  <!-- <picker mode="date"
     value="{{birthday}}" bindchange='bindageChange'>
       <view class='list' >
      <text class='title'>生日</text>
     <text class='mintitle'>{{birthday}}</text>
   </view>
-  </picker>
+  </picker> -->
   <view class='list'>
     <text class='title'>我的地址</text>
      <input class='mintitle' value='{{userInfo.user_address}}' bindinput='bindadder'></input>

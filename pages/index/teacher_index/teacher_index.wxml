@@ -25,7 +25,7 @@
       <image class='class_logo' src='http://class.zzvlm.com/1223552@2x.png'></image>
       <text class='class_title_name'>用户评价({{teacher_eveList.length}})</text>
       <text class='class_mintitle'>{{teacher_info.teacher_estimate}}%好评</text>
-      <text class='iconfont icon-arr-right-red'></text>
+      <!-- <text class='iconfont icon-arr-right-red'></text> -->
     </view>
     <view class='evaluate_list' wx:for="{{teacher_eveList}}" wx:key="{{index}}" wx:for-item="item">
       <view class='list_head'>
