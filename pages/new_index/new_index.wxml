@@ -2,7 +2,7 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
     <block wx:for="{{bannerlist}}" wx:for-item="item" wx:for-index="index">
       <swiper-item class="swiper_item">
-        <image src="{{item}}" class="slide-image" />
+        <image src="{{item.banner_url}}" class="slide-image" catchtap='to_web_view' data-url='{{item.banner_content}}' data-id='{{item.banner_id}}'/>
       </swiper-item>
     </block>
   </swiper>

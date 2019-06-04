@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/new_index/new_index",
+    "pages/webView/webView",
     "pages/xq/xq",
     "pages/message/message",
     "pages/notice/notice",

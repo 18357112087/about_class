@@ -48,10 +48,23 @@ Page({
       console.log(res.data.data)
       this.setData({
         bannerlist: res.data.data.map((item) => {
-          return 'http://yueke.dazhu-ltd.cn/public/uploads/' + item.banner_url
+          item.banner_url = 'http://yueke.dazhu-ltd.cn/public/uploads/' + item.banner_url
+          return item
         })
       })
     })
+  },
+  to_web_view(e){
+    console.log(e)
+    if(e.currentTarget.dataset.url!='#'){
+      let s = e.currentTarget.dataset.url.split('?')[0]
+      wx.navigateTo({
+        url: '/pages/webView/webView?url=' + s + '&id=' + e.currentTarget.dataset.id,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
   /**
    * 获取资料列表
