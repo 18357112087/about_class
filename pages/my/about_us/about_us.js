@@ -35,12 +35,12 @@ Page({
   onHide: function () {
 
   },
-  go_xy(){
+  go_xy() {
     wx.navigateTo({
       url: '/pages/xy/xy',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -68,6 +68,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

@@ -1,5 +1,5 @@
 // pages/ordel/bargain/bargain.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 const ctx = wx.createCanvasContext('myCanvas');
 Page({
 
@@ -15,7 +15,7 @@ Page({
     school: '北大',
     _class: '计算机'
   },
-  hide_mask(){
+  hide_mask() {
     this.setData({
       mask: !this.data.mask
     })
@@ -37,13 +37,13 @@ Page({
     })
     this.git_init(options.order_id)
   },
-  git_init(id){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token'),
-      order_id:id
-    },'/order/bargain_list',res=>{
+  git_init(id) {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id: id
+    }, '/order/bargain_list', res => {
       this.setData({
-        info:res.data.data,
+        info: res.data.data,
         name: res.data.data.user_nickname,
         'imglist[2]': res.data.data.user_portrait == '' ? 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png' : 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.user_portrait
       })
@@ -55,7 +55,7 @@ Page({
       order_id: this.data.order_id
     }, '/order/order_bargain', res => {
       this.git_init(this.data.order_id)
-      config.mytoast('砍价成功,即将生成砍价小程序码',(res)=>{
+      config.mytoast('砍价成功,即将生成砍价小程序码', (res) => {
         wx.showLoading({
           title: '正在生成图片',
         })
@@ -71,7 +71,7 @@ Page({
         })
       })
 
-    })    
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -130,7 +130,7 @@ Page({
     //绘制头像
     ctx.save()
     ctx.beginPath();
-    ctx.arc(that.rem(96) / 2 + that.rem(34), that.rem(96) / 2 + that.rem(480+54), that.rem(96) / 2, 0, Math.PI * 2, false);
+    ctx.arc(that.rem(96) / 2 + that.rem(34), that.rem(96) / 2 + that.rem(480 + 54), that.rem(96) / 2, 0, Math.PI * 2, false);
     ctx.clip()
     ctx.drawImage(that.data.newList[2], that.rem(34), that.rem(480 + 54), that.rem(96), that.rem(96))
     ctx.restore();
@@ -148,7 +148,7 @@ Page({
     ctx.setFontSize(that.rem(34))
     ctx.setTextAlign('left')
     ctx.setFillStyle('#2C2C2C')
-    ctx.fillText(that.data.name, that.rem(146), that.rem(480 + 54+55))
+    ctx.fillText(that.data.name, that.rem(146), that.rem(480 + 54 + 55))
     //绘制用户标签
     // ctx.setFillStyle('#60EAF3')
     // ctx.fillRect(that.rem(160) + ctx.measureText(that.data.name).width, that.rem(480 + 54 + 42 - 30), that.rem(128), that.rem(40))
@@ -167,12 +167,12 @@ Page({
       mask: true
     })
   },
-  re_index(){
+  re_index() {
     wx.switchTab({
       url: '/pages/index/index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   save() {
@@ -254,6 +254,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

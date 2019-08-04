@@ -1,5 +1,5 @@
 // pages/my/my.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
    */
   data: {
     default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
-    userInfo:null,
-    ordel_count:0,
-    teacher_count:0
+    userInfo: null,
+    ordel_count: 0,
+    teacher_count: 0
   },
   to_wallet() {
     wx.navigateTo({
@@ -19,15 +19,15 @@ Page({
       complete: function (res) { },
     })
   },
-  call(){
-    config.ajax('POST',{
+  call() {
+    config.ajax('POST', {
 
-    },'/index/service_phone',res=>{
+    }, '/index/service_phone', res => {
       wx.makePhoneCall({
-        phoneNumber:res.data.data.url,
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        phoneNumber: res.data.data.url,
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
       })
     })
   },
@@ -38,21 +38,21 @@ Page({
 
   },
   //跳转到老师小程序
-  to_teacher(){
+  to_teacher() {
     config.mytoast('这是跳转到老师小程序')
   },
   //获取个人信息
-  get_userInfo(){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token')
-    },'/user/user_info',res=>{
+  get_userInfo() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info', res => {
       this.setData({
-        userInfo:res.data.data
+        userInfo: res.data.data
       })
     })
   },
   //我的老师
-  get_myteacher(){
+  get_myteacher() {
     config.ajax('POST', {
       token: ''
     }, '/user/my_teacher', res => {
@@ -61,15 +61,15 @@ Page({
       })
     })
   },
-  to_myteacher(){
+  to_myteacher() {
     wx.navigateTo({
       url: '/pages/my/my_teacher/my_teacher',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  to_feed_back(){
+  to_feed_back() {
     wx.navigateTo({
       url: '/pages/feed_back/feed_back',
       success: function (res) { },
@@ -77,7 +77,7 @@ Page({
       complete: function (res) { },
     })
   },
-  to_my_details(){
+  to_my_details() {
     wx.navigateTo({
       url: '/pages/my/my_details/my_details',
       success: function (res) { },
@@ -85,7 +85,7 @@ Page({
       complete: function (res) { },
     })
   },
-  to_about_us(){
+  to_about_us() {
     wx.navigateTo({
       url: '/pages/my/about_us/about_us',
       success: function (res) { },
@@ -93,12 +93,12 @@ Page({
       complete: function (res) { },
     })
   },
-  to_ordel(){
+  to_ordel() {
     wx.switchTab({
       url: '/pages/ordel/ordel',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -170,6 +170,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

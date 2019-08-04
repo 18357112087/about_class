@@ -1,5 +1,5 @@
 // pages/wallet/wallet.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
@@ -9,7 +9,7 @@ Page({
 
   },
   //提现
-  tx(){
+  tx() {
     config.mytoast('发起提现')
   },
   /**
@@ -18,12 +18,12 @@ Page({
   onLoad: function (options) {
 
   },
-  to_detail(){
+  to_detail() {
     wx.navigateTo({
       url: '/pages/income/income',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -72,6 +72,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

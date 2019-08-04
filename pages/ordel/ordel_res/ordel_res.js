@@ -1,5 +1,5 @@
 // pages/ordel/ordel_res/ordel_res.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 Page({
 
   /**
@@ -19,13 +19,13 @@ Page({
     this.get_init_data(options.order_id)
   },
   //获取订单信息
-  get_init_data(id){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token'),
-      order_id:id
-    },'/user/order_info',res=>{
+  get_init_data(id) {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      order_id: id
+    }, '/user/order_info', res => {
       console.log(res)
-      let data=res.data.data
+      let data = res.data.data
       data.startTime = config.timeForm(data.order_reservetime).chatTime.hour + ':' + config.timeForm(data.order_reservetime).chatTime.minute
       data.endTime = config.timeForm(data.order_reservetime + data.order_duration * 3600).chatTime.hour + ':' + config.timeForm(data.order_reservetime + data.order_duration * 3600).chatTime.minute
       data.order_reservetime = config.timeForm(data.order_reservetime).chatTime
@@ -43,50 +43,50 @@ Page({
 
   },
   //取消订单
-  cendel_ordel(){
+  cendel_ordel() {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token'),
       order_id: this.data.id
     }, '/order/order_cancel', res => {
       this.get_init_data(this.data.id)
       config.mytoast('订单已取消!')
-      
+
     })
   },
   //付款
-  pay_ordel(){
-    if (this.data.info.order_status==1){
+  pay_ordel() {
+    if (this.data.info.order_status == 1) {
       wx.navigateTo({
         url: '/pages/index/select_teacher/select_teacher?order_id=' + this.data.info.order_id,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },
       })
-    } else if (this.data.info.order_status == 3){
+    } else if (this.data.info.order_status == 3) {
       //付款
-        config.ajax('POST', {
-          token: wx.getStorageSync('user_token'),
-          order_id: this.data.info.order_id
-        }, '/order/pay_order', res => {
-          config.pay(JSON.parse(res.data.data), res => {
-            this.get_init_data(this.data.id)
-          })
-          // config.mytoast('支付成功!', res => {
-          //   setTimeout(() => {
-          //     this.get_init_data(this.data.id)
-          //   }, 1000)
-          // })
+      config.ajax('POST', {
+        token: wx.getStorageSync('user_token'),
+        order_id: this.data.info.order_id
+      }, '/order/pay_order', res => {
+        config.pay(JSON.parse(res.data.data), res => {
+          this.get_init_data(this.data.id)
         })
-    
-    } else if (this.data.info.order_status == 5){
+        // config.mytoast('支付成功!', res => {
+        //   setTimeout(() => {
+        //     this.get_init_data(this.data.id)
+        //   }, 1000)
+        // })
+      })
+
+    } else if (this.data.info.order_status == 5) {
       //去评价
-        wx.navigateTo({
-          url: '/pages/evaluate/evaluate?order_id=' + this.data.info.order_id,
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
-      
+      wx.navigateTo({
+        url: '/pages/evaluate/evaluate?order_id=' + this.data.info.order_id,
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+
     }
     // wx.showModal({
     //   title: '提示',
@@ -100,12 +100,12 @@ Page({
     //   complete: function (res) { },
     // })
   },
-  to_teacher_res(e){
+  to_teacher_res(e) {
     wx.navigateTo({
       url: '/pages/index/teacher_index/teacher_index?id=' + this.data.info.teacher_id,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -147,6 +147,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

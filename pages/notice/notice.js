@@ -1,13 +1,13 @@
 // pages/notice/notice.js
 const config = require('../../utils/util.js')
-  // / user / my_message
+// / user / my_message
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    noticeList:[]
+    noticeList: []
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     this.getnoticeList()
   },
-  getnoticeList(){
+  getnoticeList() {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token'),
     }, '/user/my_message', (res) => {
@@ -74,6 +74,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

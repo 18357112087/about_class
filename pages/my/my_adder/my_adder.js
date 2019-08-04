@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
@@ -18,7 +18,7 @@ Page({
       key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
     });
   },
-  add_adder(){
+  add_adder() {
     this.moveToLocation();
   },
   moveToLocation: function () {
@@ -104,6 +104,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

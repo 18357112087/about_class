@@ -34,6 +34,9 @@
     "navigationBarTitleText": "约课",
     "navigationBarTextStyle": "white"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx8833d49bf4b32652"
+  ],
   "permission": {
     "scope.userLocation": {
       "desc": "用于用户搜索地址选择地点"

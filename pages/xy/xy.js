@@ -1,23 +1,23 @@
 // pages/xy/xy.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:''
+    info: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {  
-    config.ajax('POST',{
+  onLoad: function (options) {
+    config.ajax('POST', {
 
-    },'/index/agreement',res=>{
+    }, '/index/agreement', res => {
       this.setData({
-        info:res.data.data.url
+        info: res.data.data.url
       })
     })
   },
@@ -68,6 +68,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

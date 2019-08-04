@@ -22,16 +22,20 @@ Page({
     start_time: '09:00',
     end_time: '18:00',
     userInfo: null,
-    time_list:[1,2,3,4,5,6,7],
-    time_index:0
+    time_list: [1, 2, 3, 4, 5, 6, 7],
+    time_index: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.inviter_id){
-      wx.setStorageSync('inviter_id',options.inviter_id)
+    if (options.scene != undefined && options.scene != null) {
+      const url = decodeURIComponent(options.scene).split('=')
+      wx.setStorageSync('inviter_id', url[1])
+    }
+    if (options.inviter_id) {
+      wx.setStorageSync('inviter_id', options.inviter_id)
     }
     let year = new Date().getFullYear();
     let mouth = new Date().getMonth() + 1;
@@ -47,12 +51,12 @@ Page({
     });
     this.getAdver()
   },
-  txy(){
+  txy() {
     wx.navigateTo({
       url: '/pages/xy/xy',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   //年级列表
@@ -96,7 +100,7 @@ Page({
           },
           success: function (addressRes) {
             console.log(addressRes)
-            var address = addressRes.result.address+addressRes.result.formatted_addresses.recommend;
+            var address = addressRes.result.address + addressRes.result.formatted_addresses.recommend;
             config.ajax('POST', {
               token: wx.getStorageSync('user_token'), //token 
               subjects_id: that.data.class_list[that.data.class_index].subjects_id, //科目id 
@@ -112,9 +116,9 @@ Page({
             }, '/order/place_order', res => {
               wx.navigateTo({
                 url: '/pages/index/select_teacher/select_teacher?order_id=' + res.data.data.order_id,
-                success: function (res) {},
-                fail: function (res) {},
-                complete: function (res) {},
+                success: function (res) { },
+                fail: function (res) { },
+                complete: function (res) { },
               })
             })
           }
@@ -123,7 +127,7 @@ Page({
       fail: function (err) {
         config.mytoast('下单失败!您未确认地址!')
       },
-      complete:function(com){
+      complete: function (com) {
         console.log(com)
       }
     });
@@ -237,6 +241,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

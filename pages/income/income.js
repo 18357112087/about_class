@@ -1,13 +1,13 @@
 // pages/income/income.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page:1,
-    list:[],
+    page: 1,
+    list: [],
   },
 
   /**
@@ -16,11 +16,11 @@ Page({
   onLoad: function (options) {
     this.get_init()
   },
-  get_init(){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token'),
-      page:this.data.page
-    },'/user/balance_detail',res=>{
+  get_init() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      page: this.data.page
+    }, '/user/balance_detail', res => {
       if (res.data.data.length > 0) {
         var list = res.data.data.map((item) => {
           item.user_balance_createtime = config.timeForm(item.user_balance_createtime).chatTime
@@ -35,12 +35,12 @@ Page({
       })
     })
   },
-  list_detail(){
+  list_detail() {
     wx.navigateTo({
       url: '/pages/income_details/income_details',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -89,6 +89,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

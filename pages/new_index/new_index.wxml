@@ -8,7 +8,7 @@
   </swiper>
 </view>
 <view class='tab_wrap'>
-  <view class='tab_item'>
+  <view class='tab_item' bindtap='toTearch'>
     <text class='iconfont icon-xuesheng'></text>
     <text class='tab_title'>我是老师</text>
   </view>

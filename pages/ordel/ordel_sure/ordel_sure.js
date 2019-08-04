@@ -1,38 +1,38 @@
 // pages/ordel/ordel_sure/ordel_sure.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    all:0,
-    id:'',
-    remark:'',
-    other_list:[{
-      label:'附加车费',
-      check:true,
-      type:1,
-      money:0
+    all: 0,
+    id: '',
+    remark: '',
+    other_list: [{
+      label: '附加车费',
+      check: true,
+      type: 1,
+      money: 0
     }, {
-        label: '附加饭费',
-        check: true,
-        type: 2,
-        money:0
-      }, {
-        label: '附加感谢费',
-        check: false,
-        type: 3,
-        money:0
-      }]
+      label: '附加饭费',
+      check: true,
+      type: 2,
+      money: 0
+    }, {
+      label: '附加感谢费',
+      check: false,
+      type: 3,
+      money: 0
+    }]
   },
   //获取备注
-  get_remark(e){
+  get_remark(e) {
     this.setData({
-      remark:e.detail.value
+      remark: e.detail.value
     })
   },
-  handel_change(){
+  handel_change() {
     let data = this.data.other_list
     let s = 0
     for (let l = 0; l < data.length; l++) {
@@ -45,12 +45,12 @@ Page({
     })
   },
   //获取钱
-  get_value(e){
+  get_value(e) {
     let data = this.data.other_list
     data[e.currentTarget.dataset.index].money = e.detail.value
     this.handel_change()
     this.setData({
-      other_list:data,
+      other_list: data,
     })
   },
   /**
@@ -69,13 +69,13 @@ Page({
     })
     this.get_init()
   },
-  get_init(){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token'),
+  get_init() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
       order_id: this.data.order_id
-    },'/order/order_message',res=>{
+    }, '/order/order_message', res => {
       this.setData({
-        info:res.data.data
+        info: res.data.data
       })
     })
   },
@@ -88,7 +88,7 @@ Page({
     })
   },
   //选择额外费用
-  select(e){
+  select(e) {
     let arr = this.data.other_list
     arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
     this.handel_change()
@@ -102,23 +102,23 @@ Page({
   onReady: function () {
 
   },
-  sure_ordel(){
-    let a=[]
-    for (let s = 0; s < this.data.other_list.length;s++){
-      if (this.data.other_list[s].check){
+  sure_ordel() {
+    let a = []
+    for (let s = 0; s < this.data.other_list.length; s++) {
+      if (this.data.other_list[s].check) {
         a.push({
           type: this.data.other_list[s].type,
           money: this.data.other_list[s].money
         })
       }
     }
-    config.ajax('POST',{ 
-      token:wx.getStorageSync('user_token'),
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
       order_id: this.data.order_id,    //订单id
       teacher_id: this.data.id,  //教师id
-      remark:this.data.remark,    //备注
-      subjoin:JSON.stringify(a)     //其它金额
-    },'/order/affirm_teacher',res=>{
+      remark: this.data.remark,    //备注
+      subjoin: JSON.stringify(a)     //其它金额
+    }, '/order/affirm_teacher', res => {
       wx.navigateTo({
         url: '/pages/ordel/sure_ordel/ordel_sure?id=' + this.data.order_id,
         success: function (res) { },
@@ -126,7 +126,7 @@ Page({
         complete: function (res) { },
       })
     })
-    
+
   },
   /**
    * 生命周期函数--监听页面显示
@@ -167,6 +167,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

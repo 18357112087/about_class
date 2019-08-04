@@ -1,14 +1,14 @@
 // pages/index/teacher_index/teacher_index.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    teacher_info:null,
-    teacher_eveList:[],
-    page:1,
+    teacher_info: null,
+    teacher_eveList: [],
+    page: 1,
     read: true
   },
 
@@ -20,23 +20,23 @@ Page({
     this.get_estimate(options.id)
   },
   //获取教师数据
-  get_init(id){
-    config.ajax('POST',{
-      teacher_id:id
-    },'/index/teacher_info',res=>{
+  get_init(id) {
+    config.ajax('POST', {
+      teacher_id: id
+    }, '/index/teacher_info', res => {
       this.setData({
-        teacher_info:res.data.data
+        teacher_info: res.data.data
       })
     })
   },
   //获取教师评论
-  get_estimate(id){
+  get_estimate(id) {
     config.ajax('POST', {
       teacher_id: id,
-      page:this.data.page
+      page: this.data.page
     }, '/index/teacher_estimate', res => {
       this.setData({
-        teacher_eveList: res.data.data.map((item)=>{
+        teacher_eveList: res.data.data.map((item) => {
           item.order_estimatetime = config.timeForm(item.order_estimatetime)
           return item
         })
@@ -89,6 +89,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

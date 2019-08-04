@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      order_id:options.id
+      order_id: options.id
     })
   },
 
@@ -23,7 +23,7 @@ Page({
   onReady: function () {
 
   },
-  to_bargain(){
+  to_bargain() {
     // wx.showModal({
     //   title: '提示',
     //   content:'这是转发给好友',
@@ -32,26 +32,26 @@ Page({
     //   complete: function(res) {},
     // })
     wx.navigateTo({
-      url: '/pages/ordel/bargain/bargain?order_id='+this.data.order_id,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      url: '/pages/ordel/bargain/bargain?order_id=' + this.data.order_id,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  look_res(){
+  look_res() {
     wx.navigateTo({
-      url: '/pages/ordel/ordel_res/ordel_res?order_id='+this.data.order_id,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      url: '/pages/ordel/ordel_res/ordel_res?order_id=' + this.data.order_id,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  return_index(){
+  return_index() {
     wx.switchTab({
       url: '/pages/index/index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -93,6 +93,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

@@ -1,19 +1,19 @@
 // pages/my/my_teacher/my_teacher.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    teacher:[]
+    teacher: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
   get_myteacher() {
     config.ajax('POST', {
@@ -24,12 +24,12 @@ Page({
       })
     })
   },
-  to_res(e){
+  to_res(e) {
     wx.navigateTo({
       url: '/pages/index/teacher_index/teacher_index?id=' + e.currentTarget.dataset.id,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -78,6 +78,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

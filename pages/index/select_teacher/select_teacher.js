@@ -1,5 +1,5 @@
 // pages/index/select_teacher/select_teacher.js
-const config=require('../../../utils/util.js')
+const config = require('../../../utils/util.js')
 Page({
 
   /**
@@ -7,7 +7,7 @@ Page({
    */
   data: {
     list: [],
-    read:true
+    read: true
   },
 
   /**
@@ -20,29 +20,29 @@ Page({
     this.getTeachers(options.order_id)
   },
   //获取匹配的老师
-  getTeachers(order_id){
+  getTeachers(order_id) {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token'),   //token
       order_id: order_id  //订单id
     }, '/order/select_teacher', res => {
       setTimeout(() => {
-        if (res.data.data.length==0){
-          config.mytoast('暂未匹配到老师',(res)=>{
+        if (res.data.data.length == 0) {
+          config.mytoast('暂未匹配到老师', (res) => {
             wx.navigateBack({
               delta: 1,
             })
           })
-        }else{
+        } else {
           this.setData({
             list: res.data.data
           })
         }
-       
+
       }, 3000)
     })
   },
-  to_teacherRes(e){
-    let info=JSON.stringify({
+  to_teacherRes(e) {
+    let info = JSON.stringify({
       id: e.currentTarget.dataset.id,
       order_id: this.data.order_id,
       teacher_portrait: this.data.list[e.currentTarget.dataset.index].teacher_portrait,
@@ -52,10 +52,10 @@ Page({
       teacher_age: this.data.list[e.currentTarget.dataset.index].teacher_age
     })
     wx.navigateTo({
-      url: '/pages/ordel/ordel_sure/ordel_sure?info='+info,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      url: '/pages/ordel/ordel_sure/ordel_sure?info=' + info,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
 
@@ -105,6 +105,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })
