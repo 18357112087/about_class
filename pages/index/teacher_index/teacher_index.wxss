@@ -45,6 +45,7 @@
 .info_val {
   width: 144rpx;
   height: 144rpx;
+  border-radius:50%; 
 }
 
 .res_name {

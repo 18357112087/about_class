@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'https://pay.tchhkj.com/public/uploads//default/user_default.png',
     userInfo: null,
     ordel_count: 0,
     teacher_count: 0

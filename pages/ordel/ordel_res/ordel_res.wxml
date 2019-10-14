@@ -9,7 +9,7 @@
 </view>
 <view class='wrap'>
   <view class='head_top borT' bindtap='to_teacher_res'>
-    <image class='top_val' src="{{info.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.teacher_portrait:default_src}}"></image>
+    <image class='top_val' src="{{info.teacher_portrait?'https://pay.tchhkj.com/public/uploads/'+info.teacher_portrait:default_src}}"></image>
     <view class='top_res'>
       <view class='top_res_title'>
         <text class='top_res_name'>{{info.teacher_realname?info.teacher_realname:'未知'}}</text>

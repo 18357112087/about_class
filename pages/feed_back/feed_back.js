@@ -32,7 +32,7 @@ Page({
         token: wx.getStorageSync('user_token')
       }, '/user/upload_img', succes => {
         this.setData({
-          img: 'http://yueke.dazhu-ltd.cn/public/uploads/' + succes.data.path
+          img: 'https://pay.tchhkj.com/public/uploads/' + succes.data.path
         })
       }, error => {
         console.log(error)

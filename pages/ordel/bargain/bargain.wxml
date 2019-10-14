@@ -1,7 +1,7 @@
 <view class="head">
   <view class='head_wrap'>
     <view class='head_top '>
-      <image class='top_val' src="{{info.user_portrait!=''?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.user_portrait:default_src}}"></image>
+      <image class='top_val' src="{{info.user_portrait!=''?'https://pay.tchhkj.com/public/uploads/'+info.user_portrait:default_src}}"></image>
       <view class='top_res'>
         <view class='top_res_title'>
           <text class='top_res_name'>{{info.user_nickname}}</text>
@@ -24,7 +24,7 @@
   <view class='content_wrap'>
     <view class='wrap_title'>好友砍价榜</view>
     <view class='wrap_list' wx:for="{{info.OrderBargain_list}}" wx:for-index="index" wx:for-item="item">
-      <image class='list_val' src="{{item.user_portrait!=''?'http://yueke.dazhu-ltd.cn/public/uploads/'+item.user_portrait:default_src}}"></image>
+      <image class='list_val' src="{{item.user_portrait!=''?'https://pay.tchhkj.com/public/uploads/'+item.user_portrait:default_src}}"></image>
       <text class='list_name'>{{item.user_nickname}}</text>
       <text class='list_price'>{{item.order_bargain_money}}</text>
     </view>

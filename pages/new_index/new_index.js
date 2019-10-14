@@ -69,7 +69,7 @@ Page({
       console.log(res.data.data)
       this.setData({
         bannerlist: res.data.data.map((item) => {
-          item.banner_url = 'http://yueke.dazhu-ltd.cn/public/uploads/' + item.banner_url
+          item.banner_url = 'https://pay.tchhkj.com/public/uploads/' + item.banner_url
           return item
         })
       })
@@ -98,7 +98,7 @@ Page({
         let list = this.data.zllist
         let page = this.data.page
         let more = res.data.data.map((item) => {
-          item.notice_surface = 'http://yueke.dazhu-ltd.cn/public/uploads/' + item.notice_surface
+          item.notice_surface = 'https://pay.tchhkj.com/public/uploads/' + item.notice_surface
           console.log(item.notice_createtime)
           item.notice_createtime = config.timeForm(item.notice_createtime).chatTime.year + '/' + config.timeForm(item.notice_createtime).chatTime.month + '/' + config.timeForm(item.notice_createtime).chatTime.day
           console.log(item.notice_createtime)

@@ -8,7 +8,7 @@ Page({
   data: {
     userInfo: null,
     birthday: '',
-    sex_index: 0,
+    sex_index: 1,
     age_index: 0,
     age_list: [],
     sex_list: [{
@@ -54,10 +54,12 @@ Page({
     config.ajax('POST', {
       token: wx.getStorageSync('user_token')
     }, '/user/user_info', res => {
+      console.log(res.data.data)
       wx.setStorageSync('userInfo', res.data.data)
       this.setData({
         birthday: res.data.data.user_birthday,
-        userInfo: res.data.data
+        userInfo: res.data.data,
+        sex_index: res.data.data.user_sex-1
       })
     })
   },
@@ -68,7 +70,7 @@ Page({
       }, '/user/upload_img', succes => {
         var userInfo = this.data.userInfo
         userInfo.user_portrait = succes.data.path
-        console.log()
+        console.log(userInfo.user_sex)
         this.setData({
           userInfo: userInfo,
           sex_index: userInfo.user_sex - 1,
@@ -96,6 +98,7 @@ Page({
   },
   //保存个人信息
   save() {
+
     config.ajax('POST', {
       nickname: this.data.userInfo.user_nickname,
       sex: this.data.sex_list[this.data.sex_index].value,

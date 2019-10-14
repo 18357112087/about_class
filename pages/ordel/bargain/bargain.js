@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'https://pay.tchhkj.com/public/uploads//default/user_default.png',
     mask: false,
     imglist: ['http://class.zzvlm.com/2017041969914926076563635@2x.png', 'http://class.zzvlm.com/37861@2x.png', 'http://img.zcool.cn/community/019b7e5bbe34c9a801213dea292f6e.png@2o.png', 'http://class.zzvlm.com/123551@2x.png', 'https://fapiao.gaodun.com/Public/cma/x_bg.png'],
     name: '仇益阳',
@@ -45,7 +45,7 @@ Page({
       this.setData({
         info: res.data.data,
         name: res.data.data.user_nickname,
-        'imglist[2]': res.data.data.user_portrait == '' ? 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png' : 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.user_portrait
+        'imglist[2]': res.data.data.user_portrait == '' ? 'https://pay.tchhkj.com/public/uploads/default/user_default.png' : 'https://pay.tchhkj.com/public/uploads/' + res.data.data.user_portrait
       })
     })
   },
@@ -63,9 +63,9 @@ Page({
           token: wx.getStorageSync('user_token'),
           order_id: this.data.order_id
         }, '/user/user_qrcode', res => {
-          console.log('http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data)
+          console.log('https://pay.tchhkj.com/public/uploads/' + res.data.data)
           // this.setData({
-          //   'imglist[0]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
+          //   'imglist[0]': 'https://pay.tchhkj.com/public/uploads/' + res.data.data
           // })
           this.downImg(this.data.imglist)
         })
