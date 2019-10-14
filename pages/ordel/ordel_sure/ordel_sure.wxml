@@ -1,6 +1,6 @@
 <view class='content'>
   <view class='wrap'>
-    <image class='head_group' src='http://yueke.dazhu-ltd.cn/public/uploads/{{teacher_portrait}}'></image>
+    <image class='head_group' src='https://pay.tchhkj.com/public/uploads/{{teacher_portrait}}'></image>
     <view class='res_group' bindtap='to_teacher_res'>
       <text class='res_title'>详细信息</text>
       <text class='iconfont icon-arr-right-red'></text>

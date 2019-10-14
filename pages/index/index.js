@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png',
-    mask: true,
+    default_src: 'https://pay.tchhkj.com/public/uploads/default/user_default.png',
+    mask: false,
     min_index: 0,
     minTab_list: ['985院校', '211院校'],
     grade_list: ['初中1年级', '初中2年级'],
@@ -39,11 +39,11 @@ Page({
     }
     let year = new Date().getFullYear();
     let mouth = new Date().getMonth() + 1;
-    mouth = mouth > 10 ? mouth : '0' + mouth
+    mouth = mouth > 9 ? mouth : '0' + mouth
     let day = new Date().getDate();
     day = day > 9 ? day : '0' + day
     this.setData({
-      start_time: new Date().getHours() + ':' + new Date().getMinutes(),
+      start_time: '12' + ':' + '00',
       date: year + '-' + mouth + '-' + day
     })
     qqmapsdk = new QQMapWX({
