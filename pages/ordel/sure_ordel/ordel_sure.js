@@ -48,7 +48,7 @@ Page({
   },
   return_index() {
     wx.switchTab({
-      url: '/pages/index/index',
+      url: '/pages/new_index/new_index',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

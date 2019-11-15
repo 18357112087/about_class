@@ -14,7 +14,7 @@ Page({
     indicatorColor: 'rgba(255, 255, 255, 1)',
     indicatorActiveColor: 'rgba(69, 208, 174, 1)',
     interval: 3000,
-    duration: 1000,
+    duration: 500,
     page: 1
   },
   look_res(e) {
