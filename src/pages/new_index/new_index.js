@@ -36,8 +36,8 @@ Page({
     if (options.inviter_id) {
       wx.setStorageSync('inviter_id', options.inviter_id)
     }
-    this.getBanner()
-    this.getzl()
+    // this.getBanner()
+    // this.getzl()
   },
   toTearch() {
     wx.navigateToMiniProgram({

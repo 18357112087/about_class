@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/new_index/new_index",
     "pages/webView/webView",
     "pages/xq/xq",
     "pages/message/message",
     "pages/notice/notice",
-    "pages/index/index",
     "pages/evaluate/evaluate",
     "pages/xy/xy",
     "pages/ordel/bargain/bargain",

@@ -47,9 +47,9 @@ Page({
       date: year + '-' + mouth + '-' + day
     })
     qqmapsdk = new QQMapWX({
-      key: 'CRYBZ-QLP6D-JSX4T-PRAJD-EATR6-I4BAK'
+      key: '5ENBZ-CLOCP-5ZIDF-LMXUO-DRHN6-N2BPE'
     });
-    this.getAdver()
+    // this.getAdver()
   },
   txy() {
     wx.navigateTo({
@@ -144,9 +144,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getGrade_lsit()
-    this.getClass_list()
-    this.getLevel_list()
+    // this.getGrade_lsit()
+    // this.getClass_list()
+    // this.getLevel_list()
   },
   //关闭遮罩层
   hideMask() {

@@ -3,6 +3,8 @@
 	"packOptions": {
 		"ignore": []
 	},
+  "miniprogramRoot": "./src",
+  "cloudRoot": "./cloud",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
